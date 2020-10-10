@@ -1,31 +1,19 @@
-# RepositorioTemplate
-Esse repositório é para ser utilizado pelos grupos como um template inicial, da home page do Projeto.
-**!! Atenção: Renomeie o seu repositório para (Ano.Semestre)_(Grupo)_(Paradigma)_(NomeDoProjeto). !!** 
-
-Paradigmas:
- - Funcional
- - Logico
- - Concorrente
- - SMA
-
-**!! *Não coloque os nomes dos alunos no título do repositório*. Exemplo de título correto: 2020.1_G1_Logico_ProjetoRoteirosAereos!!**
- 
- (Apague essa seção)
-
-# NomeDoProjeto
+# EscapeFGAtes
 
 **Disciplina**: FGA0210 - PARADIGMAS DE PROGRAMAÇÃO - T01 <br>
-**Nro do Grupo**: XX<br>
-**Paradigma**: XXXXXXXXXX<br>
+**Nro do Grupo**: 04<br>
+**Paradigma**: Lógico<br>
 
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 17/0056155 | André Freitas |
+| 17/0013693 | João Gabriel Rossi |
+| 17/0113060 | Pedro Vítor de Salles Cella |
+| 17/0045269 | Sara Campos |
 
 ## Sobre 
-Descreva o seu projeto em linhas gerais. 
+Escape FGAtes é um RPG de texto que se passa no ambiente da Faculdade do Gama, o objetivo do jogo é que o usuário, um aluno de engenharia, forme em 5 anos, para que isso ocorra ele passará por 5 níveis, correspondentes aos 5 anos de curso e cada ano possuirá 2 matérias que representam os semestres cursados, e caso o usuário falhe 3 vezes num mesmo desafio ele será jubilado e o jogo acaba, porém se o usuário passar em todos os desafios ele se forma e ganha o jogo.
 
 ## Screenshots
 Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento.
