@@ -14,7 +14,7 @@ trancar:-write('É uma pena que não tenha conseguido se formar. Mais sorte da p
 jogar:-nl,write('Bem-vindo, parabéns por passar o vestibular, vocễ agora deve enfrentar os 5 anos de faculdade, será que você irá sobreviver '),nl,
        write('Como calouro você não escolhe, por isso deverá enfrentar seus primeiros 2 semestres passando nas matérias que lhe foram dadas. Boa sorte!'),nl,calculo.
 
-%Matérias
+%Ano1
 
 calculo:-nl,write('Seu primeiro desafio, Cálculo, a matéria que é falada por todos os estudantes de engenharia como sua primeira dificuldade'),nl,
          write('essa matéria pode ser tanto fácil como somar 1 com 2, como tamem pode ser impossíve de se passar, como você irá se sair nessa?'),nl,
@@ -26,8 +26,44 @@ calculo:-nl,write('Seu primeiro desafio, Cálculo, a matéria que é falada por 
 
 intro_engenharia:-write('Teste').
 
-%eletricidade:-.ligue as luzes da sala
+%Férias
+
+ferias(1):-write('Parabéns por sobreviver esse primeiro ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 2 te aguarda'), curso.
+
+%Escolha de curso
+
+curso:- write('Depois de enfrentar seu primeiro ano você terá a oportunidade de fazer a escolha do seu curso, você tem 5 opções: '),nl,
+        write('1 - Aeroespacial;'),nl,
+        write('2 - Automotiva;'),nl,
+        write('3 - Eletrônica;'),nl,
+        write('4 - Energia;'),nl,
+        write('5 - Software'),nl,
+        write('Informe o número do curso que deseja se formar: '),nl,
+        read(Escolha).
+
+%Ano3
+
+eletricidade:-    write('Bem-vindo a eletricidade!'),nl,
+                  write('Nessa matéria você terá que ligar todos as luzes da sala, em apenas 4 movimentos, você sabe que:'),nl,
+                  write('As luzes da sala estão desligadas'),nl,
+                  write('A sala possui 4 interruptores correspondendo as 5 luzes na sala, cada uma atua de uma maneira diferente;'),nl,
+                  write('interruptor 1 - liga a luz 1'),nl,
+                  write('interruptor 2 - liga as luzes 1, 2 e 5'),nl,
+                  write('interruptor 3 - liga as luzes 3 e 4, e desliga a luz 4 caso ela esteja ligada'),nl,
+                  write('interruptor 4 - liga a luz 4'),nl,
+                  write('Suas respostas: '),nl,
+                  nl,write('Escolha 1: '),read(Escolha1),nl,
+                  (Escolha1 \== 4 -> write('Reprovado'),nl,eletricidade ; write('Escolha 1 correta!')),nl,
+                  write('Escolha 2: '),read(Escolha2),nl,
+                  (Escolha2 \== 2 -> write('Reprovado'),nl,eletricidade ; write('Escolha 2 correta!')),nl,
+                  write('Escolha 3: '),read(Escolha3),nl,
+                  (Escolha3 \== 3 -> write('Reprovado'),nl,eletricidade ; write('Escolha 3 correta!')),nl,
+                  write('Escolha 4: '),read(Escolha4),nl,
+                  (Escolha4 \== 4 -> write('Reprovado'),nl,eletricidade ; write('Escolha 4 correta!')),nl,
+                  write('Parabéns você foi aprovado!'),nl.
 
 %fso:-.
+
+%Ano4
 
 %economia_energia:-.
