@@ -43,26 +43,30 @@ curso:- write('Depois de enfrentar seu primeiro ano você terá a oportunidade d
 
 %Ano3
 
-eletricidade:-    write('Bem-vindo a eletricidade!'),nl,
-                  write('Nessa matéria você terá que ligar todos as luzes da sala, em apenas 4 movimentos, você sabe que:'),nl,
-                  write('As luzes da sala estão desligadas'),nl,
-                  write('A sala possui 4 interruptores correspondendo as 5 luzes na sala, cada uma atua de uma maneira diferente;'),nl,
-                  write('interruptor 1 - liga a luz 1'),nl,
-                  write('interruptor 2 - liga as luzes 1, 2 e 5'),nl,
-                  write('interruptor 3 - liga as luzes 3 e 4, e desliga a luz 4 caso ela esteja ligada'),nl,
-                  write('interruptor 4 - liga a luz 4'),nl,
-                  write('Suas respostas: '),nl,
-                  nl,write('Escolha 1: '),read(Escolha1),nl,
-                  (Escolha1 \== 4 -> write('Reprovado'),nl,eletricidade ; write('Escolha 1 correta!')),nl,
-                  write('Escolha 2: '),read(Escolha2),nl,
-                  (Escolha2 \== 2 -> write('Reprovado'),nl,eletricidade ; write('Escolha 2 correta!')),nl,
-                  write('Escolha 3: '),read(Escolha3),nl,
-                  (Escolha3 \== 3 -> write('Reprovado'),nl,eletricidade ; write('Escolha 3 correta!')),nl,
-                  write('Escolha 4: '),read(Escolha4),nl,
-                  (Escolha4 \== 4 -> write('Reprovado'),nl,eletricidade ; write('Escolha 4 correta!')),nl,
-                  write('Parabéns você foi aprovado!'),nl.
+eletricidade:-write('Bem-vindo a eletricidade!'),nl,
+              write('Nessa matéria você terá que ligar todos as luzes da sala, em apenas 4 movimentos, você sabe que:'),nl,
+              write('As luzes da sala estão desligadas'),nl,
+              write('A sala possui 4 interruptores correspondendo as 5 luzes na sala, cada uma atua de uma maneira diferente;'),nl,
+              write('interruptor 1 - liga a luz 1'),nl,
+              write('interruptor 2 - liga as luzes 1, 2 e 5'),nl,
+              write('interruptor 3 - liga as luzes 3 e 4, e desliga a luz 4 caso ela esteja ligada'),nl,
+              write('interruptor 4 - liga a luz 4'),nl,
+              write('Suas respostas: '),nl,
+              nl,write('Escolha 1: '),read(Escolha1),nl,
+              (Escolha1 \== 4 -> write('Reprovado'),nl,eletricidade ; write('Escolha 1 correta!')),nl,
+              write('Escolha 2: '),read(Escolha2),nl,
+              (Escolha2 \== 2 -> write('Reprovado'),nl,eletricidade ; write('Escolha 2 correta!')),nl,
+              write('Escolha 3: '),read(Escolha3),nl,
+              (Escolha3 \== 3 -> write('Reprovado'),nl,eletricidade ; write('Escolha 3 correta!')),nl,
+              write('Escolha 4: '),read(Escolha4),nl,
+              (Escolha4 \== 4 -> write('Reprovado'),nl,eletricidade ; write('Escolha 4 correta!')),nl,
+              write('Parabéns você foi aprovado!'),nl.
 
-%fso:-.
+fso:- write('Você chegou em FSO - Fundamentos de Sistemas Operacionais'),nl,
+      write('Para você passar é simples digite o nome do melhor sistema operacional'),nl,
+      write('Não se esqueça de usar as aspas simples para escrever'),nl,
+      write('Sua resposta: '),read(Resposta),nl,
+      (Resposta = 'Linux' -> write('Aprovado!'),nl ; write('Reprovado!'),nl,fso).
 
 %Ano4
 
