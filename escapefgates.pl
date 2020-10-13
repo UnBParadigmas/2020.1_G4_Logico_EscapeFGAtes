@@ -1,4 +1,5 @@
 :- use_module(library(clpfd)).
+:- use_module(library(random)).
 
 %Comandos
 
@@ -64,6 +65,20 @@ eletricidade:-write('Bem-vindo(a) a eletricidade!'),nl,
               (Escolha4 \== 4 -> write('Reprovado'),nl,eletricidade ; write('Escolha 4 correta!')),nl,
               write('Parabéns você foi aprovado!'),nl.
 
+
+fisica_moderna :- write('Você chegou a física moderna, dentre as físicas é a mais atual, e por isso a mais complexa'),nl,
+                  write('Para passar basta responder a pergunta, o gato de Schrödinger está: '),nl,
+                  write('1- Vivo;'),nl,
+                  write('2- Morto;'),nl,
+                  write('Sua resposta:  '),nl,
+                  read(Resposta),
+                  random(0, 100, Resultado_vivo),write(Resultado_vivo),nl,
+                  random(0, 100, Resultado_morto),write(Resultado_morto),nl,
+                  (Resposta =:= 1, Resultado_vivo >= Resultado_morto -> write('Certo o gato tem mais chance de estar vivo!'),nl,write('Aprovado!') 
+                  ; Resposta =:= 2, Resultado_morto >= Resultado_vivo -> write('Certo o gato tem mais chance de estar morto!'),nl,write('Aprovado!')
+                  ; write('Reprovado! Terá que fazer a matéria novamente!'), fisica_moderna).
+
+
 fso:- write('Você chegou em FSO - Fundamentos de Sistemas Operacionais'),nl,
       write('Para você passar é simples digite o nome do melhor sistema operacional'),nl,
       write('Não se esqueça de usar as aspas simples para escrever'),nl,
@@ -76,27 +91,31 @@ subtractor_bateria(Bateria, Celular) :- Bateria - 20 #= Celular, write(Celular).
 counter_bateria(Bateria, Celular) :- Bateria + 0 #= Celular,write(Celular).
 
 
-economia_energia:-  write('Bem-vindo(a) a matéria de Economia de Energia, para passar basta não deixar seu celular descarregar.'),nl,
-                    write('Para isso você terá que escolher que aplicativos você irá fechar, cada aplicativo consome uma porcentagem de energia'),nl,
-                    write('Faça a escolha certa e evite que seu celular descarregue!'),nl,
-                    write('1º round:'),nl,
-                    write('1- Youtube'),nl,
-                    write('2- Spotify'),nl,
-                    read(Aplicativo1),(Aplicativo1 =:= 2 -> write('Bateria: '),Bateria1 = 100,subtractor_bateria(Bateria1, Celular1),write('%') ; write('Bateria: '),Bateria1 = 100,counter_bateria(Bateria1, Celular1),write('%')),nl,
-                    write('2º round:'),nl,
-                    write('1- Instagram'),nl,
-                    write('2- Snapchat'),nl,
-                    read(Aplicativo2),(Aplicativo2 =:= 2 -> write('Bateria: '),subtractor_bateria(Celular1, Celular2),write('%') ; write('Bateria: '),counter_bateria(Celular1, Celular2),write('%')),nl,
-                    write('3º round:'),nl,
-                    write('1- Twitter'),nl,
-                    write('2- Whatsapp'),nl,
-                    read(Aplicativo3),(Aplicativo3 =:= 1 -> write('Bateria: '),subtractor_bateria(Celular2, Celular3),write('%') ; write('Bateria: '),counter_bateria(Celular2, Celular3),write('%')),nl,
-                    write('4º round:'),nl,
-                    write('1- Facebook'),nl,
-                    write('2- Reddit'),nl,
-                    read(Aplicativo4),(Aplicativo4 =:= 2 -> write('Bateria: '),subtractor_bateria(Celular3, Celular4),write('%') ; write('Bateria: '),counter_bateria(Celular3, Celular4),write('%')),nl,
-                    write('5º round:'),nl,
-                    write('1- Netflix'),nl,
-                    write('2- Google Chrome'),nl,
-                    read(Aplicativo5),(Aplicativo5 =:= 1 -> write('Bateria: '),subtractor_bateria(Celular4, Celular5),write('%'),nl ; write('Bateria: '),counter_bateria(Celular4, Celular5),write('%')),nl,
-                    (Celular5 =< 0 -> write('Reprovado! Terá que fazer a matéria novamente!'),nl,economia_energia ; write('Aprovado!')).
+economia_energia:- write('Bem-vindo(a) a matéria de Economia de Energia, para passar basta não deixar seu celular descarregar.'),nl,
+                   write('Para isso você terá que escolher que aplicativos você irá fechar, cada aplicativo consome uma porcentagem de energia'),nl,
+                   write('Faça a escolha certa e evite que seu celular descarregue!'),nl,
+                   write('1º round:'),nl,
+                   write('1- Youtube'),nl,
+                   write('2- Spotify'),nl,
+                   read(Aplicativo1),(Aplicativo1 =:= 2 -> write('Bateria: '),Bateria1 = 100,subtractor_bateria(Bateria1, Celular1),write('%') ; write('Bateria: '),Bateria1 = 100,counter_bateria(Bateria1, Celular1),write('%')),nl,
+                   write('2º round:'),nl,
+                   write('1- Instagram'),nl,
+                   write('2- Snapchat'),nl,
+                   read(Aplicativo2),(Aplicativo2 =:= 2 -> write('Bateria: '),subtractor_bateria(Celular1, Celular2),write('%') ; write('Bateria: '),counter_bateria(Celular1, Celular2),write('%')),nl,
+                   write('3º round:'),nl,
+                   write('1- Twitter'),nl,
+                   write('2- Whatsapp'),nl,
+                   read(Aplicativo3),(Aplicativo3 =:= 1 -> write('Bateria: '),subtractor_bateria(Celular2, Celular3),write('%') ; write('Bateria: '),counter_bateria(Celular2, Celular3),write('%')),nl,
+                   write('4º round:'),nl,
+                   write('1- Facebook'),nl,
+                   write('2- Reddit'),nl,
+                   read(Aplicativo4),(Aplicativo4 =:= 2 -> write('Bateria: '),subtractor_bateria(Celular3, Celular4),write('%') ; write('Bateria: '),counter_bateria(Celular3, Celular4),write('%')),nl,
+                   write('5º round:'),nl,
+                   write('1- Netflix'),nl,
+                   write('2- Google Chrome'),nl,
+                   read(Aplicativo5),(Aplicativo5 =:= 1 -> write('Bateria: '),subtractor_bateria(Celular4, Celular5),write('%'),nl ; write('Bateria: '),counter_bateria(Celular4, Celular5),write('%')),nl,
+                   (Celular5 =< 0 -> write('Reprovado! Terá que fazer a matéria novamente!'),nl,economia_energia ; write('Aprovado!')).
+
+
+
+
