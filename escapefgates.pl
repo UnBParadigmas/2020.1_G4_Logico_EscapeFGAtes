@@ -83,13 +83,13 @@ eletricidade:-write('Bem-vindo(a) a eletricidade!'),nl,
               write('interruptor 4 - liga a luz 4'),nl,
               write('Suas respostas: '),nl,
               nl,write('Escolha 1: '),read(Escolha1),nl,
-              (Escolha1 \== 4 -> write('Reprovado'),nl,eletricidade ; write('Escolha 1 correta!')),nl,
+              (Escolha1 \== 4 -> write('Reprovado'),nl,mainIncrementa,eletricidade ; write('Escolha 1 correta!')),nl,
               write('Escolha 2: '),read(Escolha2),nl,
-              (Escolha2 \== 2 -> write('Reprovado'),nl,eletricidade ; write('Escolha 2 correta!')),nl,
+              (Escolha2 \== 2 -> write('Reprovado'),nl,mainIncrementa,eletricidade ; write('Escolha 2 correta!')),nl,
               write('Escolha 3: '),read(Escolha3),nl,
-              (Escolha3 \== 3 -> write('Reprovado'),nl,eletricidade ; write('Escolha 3 correta!')),nl,
+              (Escolha3 \== 3 -> write('Reprovado'),nl,mainIncrementa,eletricidade ; write('Escolha 3 correta!')),nl,
               write('Escolha 4: '),read(Escolha4),nl,
-              (Escolha4 \== 4 -> write('Reprovado'),nl,eletricidade ; write('Escolha 4 correta!')),nl,
+              (Escolha4 \== 4 -> write('Reprovado'),nl,mainIncrementa,eletricidade ; write('Escolha 4 correta!')),nl,
               write('Parabéns você foi aprovado!'),nl.
 
 
@@ -103,14 +103,14 @@ fisica_moderna :- write('Você chegou a física moderna, dentre as físicas é a
                   random(0, 100, Resultado_morto),write(Resultado_morto),nl,
                   (Resposta =:= 1, Resultado_vivo >= Resultado_morto -> write('Certo o gato tem mais chance de estar vivo!'),nl,write('Aprovado!') 
                   ; Resposta =:= 2, Resultado_morto >= Resultado_vivo -> write('Certo o gato tem mais chance de estar morto!'),nl,write('Aprovado!')
-                  ; write('Reprovado! Terá que fazer a matéria novamente!'), fisica_moderna).
+                  ; write('Reprovado! Terá que fazer a matéria novamente!'),nl,mainIncrementa, fisica_moderna).
 
 
 fso:- write('Você chegou em FSO - Fundamentos de Sistemas Operacionais'),nl,
       write('Para você passar é simples digite o nome do melhor sistema operacional'),nl,
       write('Não se esqueça de usar as aspas simples para escrever'),nl,
       write('Sua resposta: '),read(Resposta),nl,
-      (Resposta = 'Linux' -> write('Aprovado!'),nl ; write('Reprovado!'),nl,fso).
+      (Resposta = 'Linux' -> write('Aprovado!'),nl ; write('Reprovado!'),nl,mainIncrement,fso).
 
 %Ano4
 
@@ -141,4 +141,4 @@ economia_energia:- write('Bem-vindo(a) a matéria de Economia de Energia, para p
                    write('1- Netflix'),nl,
                    write('2- Google Chrome'),nl,
                    read(Aplicativo5),(Aplicativo5 =:= 1 -> write('Bateria: '),subtractor_bateria(Celular4, Celular5),write('%'),nl ; write('Bateria: '),counter_bateria(Celular4, Celular5),write('%')),nl,
-                   (Celular5 =< 0 -> write('Reprovado! Terá que fazer a matéria novamente!'),nl,economia_energia ; write('Aprovado!')).
+                   (Celular5 =< 0 -> write('Reprovado! Terá que fazer a matéria novamente!'),nl,mainIncrementa,economia_energia ; write('Aprovado!')).
