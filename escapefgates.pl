@@ -1,3 +1,5 @@
+:- use_module(library(clpfd)).
+
 %Comandos
 
 iniciar:-write('Parabéns por passar no vestibular e ingressar nessa nova fase da vida, a FACULDADE, será que você tem o que é preciso para sobreviver.'),nl,
@@ -70,7 +72,8 @@ fso:- write('Você chegou em FSO - Fundamentos de Sistemas Operacionais'),nl,
 
 %Ano4
 
-%instagram, twitter, facebook, youtube, reddit, netflix, google chrome, Snapchat, spotify, whatsapp
+subtractor_bateria(Bateria, Celular) :- Bateria - 20 #= Celular, write(Celular).
+counter_bateria(Bateria, Celular) :- Bateria + 0 #= Celular,write(Celular).
 
 
 economia_energia:-  write('Bem-vindo(a) a matéria de Economia de Energia, para passar basta não deixar seu celular descarregar.'),nl,
@@ -79,20 +82,21 @@ economia_energia:-  write('Bem-vindo(a) a matéria de Economia de Energia, para 
                     write('1º round:'),nl,
                     write('1- Youtube'),nl,
                     write('2- Spotify'),nl,
-                    read(Aplicativo1),(Aplicativo1 =:= 2 -> write('Bateria: 80%'),nl ; write('Bateria: 100%')),nl,
+                    read(Aplicativo1),(Aplicativo1 =:= 2 -> write('Bateria: '),Bateria1 = 100,subtractor_bateria(Bateria1, Celular1),write('%') ; write('Bateria: '),Bateria1 = 100,counter_bateria(Bateria1, Celular1),write('%')),nl,
                     write('2º round:'),nl,
                     write('1- Instagram'),nl,
                     write('2- Snapchat'),nl,
-                    read(Aplicativo2),(Aplicativo2 =:= 2 -> write('Bateria: 60%'),nl ; write('Bateria: 100%')),nl,
+                    read(Aplicativo2),(Aplicativo2 =:= 2 -> write('Bateria: '),subtractor_bateria(Celular1, Celular2),write('%') ; write('Bateria: '),counter_bateria(Celular1, Celular2),write('%')),nl,
                     write('3º round:'),nl,
                     write('1- Twitter'),nl,
                     write('2- Whatsapp'),nl,
-                    read(Aplicativo3),(Aplicativo3 =:= 1 -> write('Bateria: 40%'),nl ; write('Bateria: 100%')),nl,
+                    read(Aplicativo3),(Aplicativo3 =:= 1 -> write('Bateria: '),subtractor_bateria(Celular2, Celular3),write('%') ; write('Bateria: '),counter_bateria(Celular2, Celular3),write('%')),nl,
                     write('4º round:'),nl,
                     write('1- Facebook'),nl,
                     write('2- Reddit'),nl,
-                    read(Aplicativo4),(Aplicativo4 =:= 2 -> write('Bateria: 20%'),nl ; write('Bateria: 100%')),nl,
+                    read(Aplicativo4),(Aplicativo4 =:= 2 -> write('Bateria: '),subtractor_bateria(Celular3, Celular4),write('%') ; write('Bateria: '),counter_bateria(Celular3, Celular4),write('%')),nl,
                     write('5º round:'),nl,
                     write('1- Netflix'),nl,
                     write('2- Google Chrome'),nl,
-                    read(Aplicativo5),(Aplicativo5 =:= 1 -> write('Bateria: 0%'),nl,nl,write('Reprovado!'),nl,nl,economia_energia ; write('Bateria: 100%, você foi aprovado(a)')),nl.
+                    read(Aplicativo5),(Aplicativo5 =:= 1 -> write('Bateria: '),subtractor_bateria(Celular4, Celular5),write('%'),nl ; write('Bateria: '),counter_bateria(Celular4, Celular5),write('%')),nl,
+                    (Celular5 =< 0 -> write('Reprovado! Terá que fazer a matéria novamente!'),nl,economia_energia ; write('Aprovado!')).
