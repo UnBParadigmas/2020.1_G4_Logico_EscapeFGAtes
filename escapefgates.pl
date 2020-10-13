@@ -20,14 +20,30 @@ jogar:-nl,write('Bem-vindo, parabéns por passar o vestibular, vocễ agora deve
 %Ano1
 
 calculo:-nl,write('Seu primeiro desafio, Cálculo, a matéria que é falada por todos os estudantes de engenharia como sua primeira dificuldade'),nl,
-         write('essa matéria pode ser tanto fácil como somar 1 com 2, como tamem pode ser impossíve de se passar, como você irá se sair nessa?'),nl,
+         write('essa matéria pode ser tanto fácil como somar 1 com 2, como também pode ser impossíve de se passar, como você irá se sair nessa?'),nl,
          nl,write('Resolva:'),nl,
          write('1 + 2 = ?'),nl,
          write('Resposta: '),
          read(Resposta),
          (Resposta=:=3 -> write('Parabéns por passar em seu primeiro semestre, veremos até quando irá durar.'),nl,intro_engenharia ; write('É uma pena, mas você reprovou a matéria, por causa disso terá que fazê-la novamente'),nl,calculo).
 
-intro_engenharia:-write('Teste').
+intro_engenharia:-write('Você está fazendo Introdução a Engenharia, seu professor te propôs um trabalho simples para que possa ser aprovado'),nl,
+                  write('Ele pediu para que você organizasse a tabela de assentos do seu grupo'),nl,
+                  write('A tabela serve para saber qual posição cada membro irá ocupar, sabendo que cada mês os membros devem mudar de lugar'),nl,
+                  write('Por você estar no primeiro semestre o professor facilitou e pediu para você apenas terminar a tabela já feita.'),nl,
+                  write('A forma de organizar te lembra um sudoku de 4x4'),nl,
+                  write('Sabendo que no seu grupo tem o Andre, a Sara, o Gabriel e o Pedro'),nl,
+                  write('E que cada um corresponde respectivamente aos numeros 1, 2, 3 e 4, e que você como lider não participa dessa organização'),nl,
+                  write('Qrganize a tabela em forma de lista: '),nl,
+                  nl,write('Tabela:'),nl,
+                  write('4 1 ? ?'),nl,
+                  write('2 3 4 1'),nl,
+                  write('1 2 3 4'),nl,
+                  write('? ? 1 2'),nl,
+                  write('Lembrando que a resposta deve conter todos os valores, e não apenas os números que faltam'),nl,
+                  Resposta = [4,1,2,3,2,3,4,1,1,2,3,4,3,4,1,2],
+                  read(Lista),
+                  (Lista = Resposta -> write('Parabéns a lista esa correta! você foi aprovado!'),ferias(1) ; write('Você foi reprovado! Terá que fazer a matéria novamente'),intro_engenharia).
 
 %Férias
 
@@ -115,7 +131,3 @@ economia_energia:- write('Bem-vindo(a) a matéria de Economia de Energia, para p
                    write('2- Google Chrome'),nl,
                    read(Aplicativo5),(Aplicativo5 =:= 1 -> write('Bateria: '),subtractor_bateria(Celular4, Celular5),write('%'),nl ; write('Bateria: '),counter_bateria(Celular4, Celular5),write('%')),nl,
                    (Celular5 =< 0 -> write('Reprovado! Terá que fazer a matéria novamente!'),nl,economia_energia ; write('Aprovado!')).
-
-
-
-
