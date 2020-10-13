@@ -73,7 +73,19 @@ escolha:- nl,write('Agora que viu todas as opcoes, escolha o carro!!'),nl,
           write('5 - Carro 5'),nl,
           write('6 - Carro 6'),nl,
           read(EscolhaFinal),nl,
-          (EscolhaFinal \== 5 -> write('Seu amigo comprou o carro com defeito, o professor ficou sabendo e voce foi reprovado!'),sa,nl; write('Parabens!! Agora voce tem carona e a aprovacao naa disciplina!!')).
+          (EscolhaFinal \== 5 -> write('Seu amigo comprou o carro com defeito, o professor ficou sabendo e voce foi reprovado!'),sauto,nl; write('Parabens!! Agora voce tem carona e a aprovacao naa disciplina!!')).
 
+
+bd:- nl,write("Você esta cursando a materia de Bancos de dados e percebeu que salvou o nome de um usuario sem a senha!!"),nl,
+     write("Tente descobrir a senha do usuario para poder entregar o trabalho final!!"),nl,senha.
+senha:-     write("Senha criptografada = cbodp"),nl,
+            write("Dica: A senha esta muito mais perto do que voce imagina!!"),nl,
+            write("Se precisar de dicas sobre a cifra, escreva 'cola' ou 'dica' na resposta"),nl,
+            read(Senha),nl,
+            (Senha \== 'banco', Senha \== 'cola', Senha \== 'dica' -> write("Senha errada, faca a materia de novo.."),nl,bd
+            ; Senha == 'banco' -> write("Aprovado!"),nl
+            ; Senha == 'cola' -> write("O professor pegou voce colando... Reprovado!!!"),nl,bd
+            ; Senha == 'dica' -> write("Dica final: a+1, b+1, c+1,..."),nl,senha
+            ).
 
 
