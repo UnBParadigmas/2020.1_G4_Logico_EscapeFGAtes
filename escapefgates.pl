@@ -12,7 +12,7 @@ trancar:-write('É uma pena que não tenha conseguido se formar. Mais sorte da p
 jogar:-nl,write('Teste').
 
 
-sa:-     write("Você esta cursando a materia de Sistemas Automotivos e 
+sauto:-     write("Você esta cursando a materia de Sistemas Automotivos e 
             precisa ajudar seu amigo a comprar um carro seminovo, 
             ponha seus conhecimentos em pratica, inspecione os carros
              e escolha aquele que nao tem nenhum problema!!!"
