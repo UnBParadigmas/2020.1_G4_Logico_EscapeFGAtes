@@ -43,7 +43,7 @@ curso:- write('Depois de enfrentar seu primeiro ano você terá a oportunidade d
 
 %Ano3
 
-eletricidade:-write('Bem-vindo a eletricidade!'),nl,
+eletricidade:-write('Bem-vindo(a) a eletricidade!'),nl,
               write('Nessa matéria você terá que ligar todos as luzes da sala, em apenas 4 movimentos, você sabe que:'),nl,
               write('As luzes da sala estão desligadas'),nl,
               write('A sala possui 4 interruptores correspondendo as 5 luzes na sala, cada uma atua de uma maneira diferente;'),nl,
@@ -70,4 +70,29 @@ fso:- write('Você chegou em FSO - Fundamentos de Sistemas Operacionais'),nl,
 
 %Ano4
 
-%economia_energia:-.
+%instagram, twitter, facebook, youtube, reddit, netflix, google chrome, Snapchat, spotify, whatsapp
+
+
+economia_energia:-  write('Bem-vindo(a) a matéria de Economia de Energia, para passar basta não deixar seu celular descarregar.'),nl,
+                    write('Para isso você terá que escolher que aplicativos você irá fechar, cada aplicativo consome uma porcentagem de energia'),nl,
+                    write('Faça a escolha certa e evite que seu celular descarregue!'),nl,
+                    write('1º round:'),nl,
+                    write('1- Youtube'),nl,
+                    write('2- Spotify'),nl,
+                    read(Aplicativo1),(Aplicativo1 =:= 2 -> write('Bateria: 80%'),nl ; write('Bateria: 100%')),nl,
+                    write('2º round:'),nl,
+                    write('1- Instagram'),nl,
+                    write('2- Snapchat'),nl,
+                    read(Aplicativo2),(Aplicativo2 =:= 2 -> write('Bateria: 60%'),nl ; write('Bateria: 100%')),nl,
+                    write('3º round:'),nl,
+                    write('1- Twitter'),nl,
+                    write('2- Whatsapp'),nl,
+                    read(Aplicativo3),(Aplicativo3 =:= 1 -> write('Bateria: 40%'),nl ; write('Bateria: 100%')),nl,
+                    write('4º round:'),nl,
+                    write('1- Facebook'),nl,
+                    write('2- Reddit'),nl,
+                    read(Aplicativo4),(Aplicativo4 =:= 2 -> write('Bateria: 20%'),nl ; write('Bateria: 100%')),nl,
+                    write('5º round:'),nl,
+                    write('1- Netflix'),nl,
+                    write('2- Google Chrome'),nl,
+                    read(Aplicativo5),(Aplicativo5 =:= 1 -> write('Bateria: 0%'),nl,nl,write('Reprovado!'),nl,nl,economia_energia ; write('Bateria: 100%, você foi aprovado(a)')),nl.
