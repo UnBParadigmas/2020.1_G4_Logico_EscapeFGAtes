@@ -92,3 +92,19 @@ entrevistas:-
        nl,read(Pessoa),
        (Pessoa = 'sara' -> write('Parabéns! O hacker foi jubilado e você conseguiu passar na matéria!'),nl ;
        write('Você falhou em encontrar o hacker e o professor reprovou TODOS!!!'),nl).
+
+termodinamica:-
+       nl,write('Agora é hora de enfrentar a disciplina de Termodinâmica'),
+       nl,write('Mostre que aprendeu sobre a Lei de Conservação de Energia!'),
+       nl,write('Tente não morrer congelado com o frio de junho na FGA e sobreviva até a hora da sua aula'),
+       nl,write('1. Ir para RU'),
+       nl,write('2. Ir para Obelisco'),
+       nl,write('3. Ir para Biblioteca'),
+       nl,write('4. Ir para CA'),
+       nl,write('5. Ir para minha casa'),
+       nl,read(Op),
+       (Op =:= 1 -> write('O RU é aberto! Você não conservou seu calor pois foi atingido por uma rajada de vento frio e poeira... Reprovado!'),nl ;
+       Op =:= 2 -> write('Você esqueceu que o Obelisco não é um local fechado... Seu calor não foi conservado e você congelou. Reprovado!'),nl ;
+       Op =:= 3 -> write('Parabéns! Com a biblioteca fechadinha e todos se escondendo lá, está bem quentinho! Aprovado!!!'),nl ;
+       Op =:= 4 -> write('O CA é um lugar bem isolado, mas você esqueceu que ele está fechado e morreu de frio tentando abrir a porta. Que pena, reprovado!'),nl ; 
+       Op =:= 5 -> write('Você esqueceu que não podia mais faltar aulas e tomou SR... Triste, né? Reprovado!'),nl).
