@@ -103,3 +103,13 @@ sa:- nl,write("Você esta cursando a materia de Sistemas Aeroespaciais, fez um a
         Escolha == 5 -> write('Tinha tudo pra dar errado... E deu! Reprovado.'),sa,nl
     ).
 
+mecflu:- nl,write("Enquanto você esta cursando a materia de Mecanica dos Fluidos, e chegou na prova final."),nl,
+         write("Você abre a prova e ve apenas uma questao, fica nervoso, MUITO nervoso porque nao sabe responder e decide chtar..."),nl,
+         write("A questao eh: "),nl,
+         write("Você fecha a torneira enquanto escova os dentes?"),nl,
+         write("1 - sim"),nl,
+         write("2 - nao"),nl,
+         read(Escolha),nl,
+        (Escolha \== 1 -> write('Você chutou errado... Reprovado!'),mecflu,nl ; write('Você deu a sorte no chute! Aprovado!!')).
+
+
