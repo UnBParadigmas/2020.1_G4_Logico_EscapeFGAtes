@@ -1,14 +1,20 @@
 :- use_module(library(clpfd)).
 :- use_module(library(random)).
+
+%Desenvolvido pela professora
+
 :- dynamic contador/1.
 
 contador(0).
 
+%Minha alteracao
 incrementaContador :- contador(X), Y is X, retract(contador(X)), Z is (Y+1), assert(contador(Z)), (X = 3 -> jubilar ; write('Você reprovou '),write(X),write(' vezes')),nl.
 
 mainIncrementa :- incrementaContador.
 
 decrementaContador :- contador(X), Y is X, retract(contador(X)), Z is (Y-1), assert(contador(Z)).
+
+zerar_contador :- retract(contador(X)),assert(contador(0)).
 
 %Comandos
 
@@ -36,7 +42,7 @@ calculo:-nl,write('Seu primeiro desafio, Cálculo, a matéria que é falada por 
          write('1 + 2 = ?'),nl,
          write('Resposta: '),
          read(Resposta),
-         (Resposta=:=3 -> write('Parabéns por passar em seu primeiro semestre, veremos até quando irá durar.'),nl,intro_engenharia ; write('É uma pena, mas você reprovou a matéria, por causa disso terá que fazê-la novamente'),nl,mainIncrementa,calculo).
+         (Resposta=:=3 -> write('Parabéns por passar em seu primeiro semestre, veremos até quando irá durar.'),nl,zerar_contador,intro_engenharia ; write('É uma pena, mas você reprovou a matéria, por causa disso terá que fazê-la novamente'),nl,mainIncrementa,calculo).
 
 intro_engenharia:-nl,write('Você está fazendo Introdução a Engenharia, seu professor te propôs um trabalho simples para que possa ser aprovado'),nl,
                   write('Ele pediu para que você organizasse a tabela de assentos do seu grupo'),nl,
@@ -70,6 +76,27 @@ curso:- write('Depois de enfrentar seu primeiro ano você terá a oportunidade d
         write('5 - Software'),nl,
         write('Informe o número do curso que deseja se formar: '),nl,
         read(Escolha).
+        (Escolha =:= 1 -> write('Você escolheu cursar Aeroespacial! Boa sorte e bom curso!'),nl ,eletromag
+        ; Escolha =:= 2 -> write('Você escolheu cursar Automotiva! Boa sorte e bom curso!'),nl,eletromag
+        ; Escolha =:= 3 -> write('Você escolheu cursar Eletrônica! Boa sorte e bom curso!'),nl,eletromag
+        ; Escolha =:= 4 -> write('Você escolheu cursar Energia! Boa sorte e bom curso!'),nl,eletromag
+        ; Escolha =:= 5 -> write('Você escolheu cursar Software! Boa sorte e bom curso!'),nl).
+
+%Ano2
+
+eletromag:-write('Parabéns, por causa da escolha do seu curso, você veio para Eletromagnetismo, ou como gostam de chamar, eletromag'),nl,
+           write('Nessa matéria você precisará de um bom grupo e de um bom lugar para desenvolver seu trabalho'),nl,
+           write('Você vai para as famosas mesinhas em frente ao laboratório de física, mas percebe que há um outro grupo ocupando os lugares'),nl,
+           write('Existem 8 tomadas no local, porém só metade delas funciona'),nl,
+           write('Por isso seu desafio é, escolher a tomada que funciona para terminar seu trabalho'),nl,
+           write('Se você errar, não terminará o trabalho e você e seu grupo irão reprovar'),nl,
+           nl,write('Qual tomada você irá escolher'),nl,
+           read(Tomada),
+           (Tomada =:= 1 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador 
+           ; Tomada =:= 3 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador
+           ; Tomada =:= 4 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador
+           ; Tomada =:= 6 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador
+           ; write('Você escolheu uma tomada que não funcionava, você e seu grupo reprovaram!'),nl,mainIncrementa,eletromag).
 
 %Ano3
 
@@ -90,7 +117,7 @@ eletricidade:-write('Bem-vindo(a) a eletricidade!'),nl,
               (Escolha3 \== 3 -> write('Reprovado'),nl,mainIncrementa,eletricidade ; write('Escolha 3 correta!')),nl,
               write('Escolha 4: '),read(Escolha4),nl,
               (Escolha4 \== 4 -> write('Reprovado'),nl,mainIncrementa,eletricidade ; write('Escolha 4 correta!')),nl,
-              write('Parabéns você foi aprovado!'),nl.
+              write('Parabéns você foi aprovado!'),nl,zerar_contador.
 
 
 fisica_moderna :- write('Você chegou a física moderna, dentre as físicas é a mais atual, e por isso a mais complexa'),nl,
@@ -101,8 +128,8 @@ fisica_moderna :- write('Você chegou a física moderna, dentre as físicas é a
                   read(Resposta),
                   random(0, 100, Resultado_vivo),write(Resultado_vivo),nl,
                   random(0, 100, Resultado_morto),write(Resultado_morto),nl,
-                  (Resposta =:= 1, Resultado_vivo >= Resultado_morto -> write('Certo o gato tem mais chance de estar vivo!'),nl,write('Aprovado!') 
-                  ; Resposta =:= 2, Resultado_morto >= Resultado_vivo -> write('Certo o gato tem mais chance de estar morto!'),nl,write('Aprovado!')
+                  (Resposta =:= 1, Resultado_vivo >= Resultado_morto -> write('Certo o gato tem mais chance de estar vivo!'),nl,write('Aprovado!'),zerar_contador 
+                  ; Resposta =:= 2, Resultado_morto >= Resultado_vivo -> write('Certo o gato tem mais chance de estar morto!'),nl,write('Aprovado!'),zerar_contador
                   ; write('Reprovado! Terá que fazer a matéria novamente!'),nl,mainIncrementa, fisica_moderna).
 
 
@@ -110,7 +137,7 @@ fso:- write('Você chegou em FSO - Fundamentos de Sistemas Operacionais'),nl,
       write('Para você passar é simples digite o nome do melhor sistema operacional'),nl,
       write('Não se esqueça de usar as aspas simples para escrever'),nl,
       write('Sua resposta: '),read(Resposta),nl,
-      (Resposta = 'Linux' -> write('Aprovado!'),nl ; write('Reprovado!'),nl,mainIncrement,fso).
+      (Resposta = 'Linux' -> write('Aprovado!'),nl,zerar_contador ; write('Reprovado!'),nl,mainIncrement,fso).
 
 %Ano4
 
@@ -141,4 +168,4 @@ economia_energia:- write('Bem-vindo(a) a matéria de Economia de Energia, para p
                    write('1- Netflix'),nl,
                    write('2- Google Chrome'),nl,
                    read(Aplicativo5),(Aplicativo5 =:= 1 -> write('Bateria: '),subtractor_bateria(Celular4, Celular5),write('%'),nl ; write('Bateria: '),counter_bateria(Celular4, Celular5),write('%')),nl,
-                   (Celular5 =< 0 -> write('Reprovado! Terá que fazer a matéria novamente!'),nl,mainIncrementa,economia_energia ; write('Aprovado!')).
+                   (Celular5 =< 0 -> write('Reprovado! Terá que fazer a matéria novamente!'),nl,mainIncrementa,economia_energia ; write('Aprovado!'),zerar_contador).
