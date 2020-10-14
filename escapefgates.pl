@@ -70,28 +70,28 @@ redes:-
        nl,write('Calma, vai ficar tudo bem... Se você estudou de verdade pra essa matéria, é só encontrar o hacker pelo endereço IP'),
        nl,write('Agora, vamos lá! Coloque seus conhecimentos em prática!'),
        nl,computador.
-computador:-
-       nl,write('Você sabe que:'),
-       nl,write('1. o hacker muito provavelmente é alguém que está reprovando na matéria'),
-       nl,write('2. o hacker pode dividir o computador com outra pessoa'),
-       nl,write('3. o hacker realizou a mudança das notas na terça-feira às 12h47'),
-       nl,write('E agora, o que deseja fazer?'),
-       nl,write('1. conferir o IP'),
-       nl,write('2. acusar a pessoa que está em condição'),
-       nl,write('3. estudar pra outra matéria'),
-       nl,read(Escolha),
-       (Escolha=:=1 -> write('Boa!'),nl,entrevistas ; write('Você falhou em encontrar o hacker e o professor reprovou TODOS!!!'),nl).
-entrevistas:-
-       nl,write('O IP aponta para a república onde moram Sara, Pedro, André e João'),
-       nl,write('Agora você tem em mãos as seguintes informações:'),
-       nl,write('1. João tinha uma prova terça-feira às 10h e almoçou no Restaurante Universitário'),
-       nl,write('2. Pedro faltou a aula que tinha às 14h, pois teve que buscar Sara no mercado perto de casa'),
-       nl,write('3. André teve um almoço romântico com sua namorada'),
-       nl,write('4. Pedro já estaria aprovado, se as notas da Prova 2 não tivessem sido alteradas'),
-       nl,write('Escreva o nome do hacker:'),
-       nl,read(Pessoa),
-       (Pessoa = 'sara' -> write('Parabéns! O hacker foi jubilado e você conseguiu passar na matéria!'),nl ;
-       write('Você falhou em encontrar o hacker e o professor reprovou TODOS!!!'),nl).
+       computador:-
+              nl,write('Você sabe que:'),
+              nl,write('1. o hacker muito provavelmente é alguém que está reprovando na matéria'),
+              nl,write('2. o hacker pode dividir o computador com outra pessoa'),
+              nl,write('3. o hacker realizou a mudança das notas na terça-feira às 12h47'),
+              nl,write('E agora, o que deseja fazer?'),
+              nl,write('1. conferir o IP'),
+              nl,write('2. acusar a pessoa que está em condição'),
+              nl,write('3. estudar pra outra matéria'),
+              nl,read(Escolha),
+              (Escolha=:=1 -> write('Boa!'),nl,entrevistas ; write('Você falhou em encontrar o hacker e o professor reprovou TODOS!!!'),nl).
+       entrevistas:-
+              nl,write('O IP aponta para a república onde moram Sara, Pedro, André e João'),
+              nl,write('Agora você tem em mãos as seguintes informações:'),
+              nl,write('1. João tinha uma prova terça-feira às 10h e almoçou no Restaurante Universitário'),
+              nl,write('2. Pedro faltou a aula que tinha às 14h, pois teve que buscar Sara no mercado perto de casa'),
+              nl,write('3. André teve um almoço romântico com sua namorada'),
+              nl,write('4. Pedro já estaria aprovado, se as notas da Prova 2 não tivessem sido alteradas'),
+              nl,write('Escreva o nome do hacker:'),
+              nl,read(Pessoa),
+              (Pessoa = 'sara' -> write('Parabéns! O hacker foi jubilado e você conseguiu passar na matéria!'),nl ;
+              write('Você falhou em encontrar o hacker e o professor reprovou TODOS!!!'),nl).
 
 termodinamica:-
        nl,write('Agora é hora de enfrentar a disciplina de Termodinâmica'),
@@ -123,7 +123,19 @@ embarcados:-
        Ordem = Resp4 -> write('Muito bem, você foi aprovado!'), nl ;
        write('Você precisa acender a luz primeiro! Reprovado!'),nl).
 
-%pricom:-
+pricom:-
+       nl,write('Muito é falado sobre como essa matéria é difícil, mas agora é sua vez de descobrir se isso é verdade!'),
+       nl,write('Bem vindo à Princípios de Comunicação!'),
+       nl,write('Para ser aprovado, você precisa mostrar pro professor que aprendeu'),
+       nl,write('1. Tentar colar na prova'),
+       nl,write('2. Estudar sem parar'),
+       nl,write('3. Estudar de maneira saudável, com pausas para relaxar'),
+       nl,read(Esc),
+       random(0,1,Sorte),
+       (Esc =:= 1,Sorte =:= 1 -> write('Nossa, você teve muita sorte! O professor não te pegou colando e você foi aprovado!') ; 
+       Esc =:= 1,Sorte =:= 0 -> write('O professor te pegou colando e resolveu que você merecia um SR :o Reprovado!') ;
+       Esc =:= 2 -> write('Você estudou demais, esqueceu de dormir e se alimentar direito e acabou sendo internado! O professor não aceitou o atestado e você reprovou!') ;
+       Esc =:= 3 -> write('Parabéns pelo seu esforço e equilíbrio, você conseguiu! Aprovado!!'),nl).
 
 
 %design:-
