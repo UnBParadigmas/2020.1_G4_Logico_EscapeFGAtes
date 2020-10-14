@@ -108,3 +108,18 @@ termodinamica:-
        Op =:= 3 -> write('Parabéns! Com a biblioteca fechadinha e todos se escondendo lá, está bem quentinho! Aprovado!!!'),nl ;
        Op =:= 4 -> write('O CA é um lugar bem isolado, mas você esqueceu que ele está fechado e morreu de frio tentando abrir a porta. Que pena, reprovado!'),nl ; 
        Op =:= 5 -> write('Você esqueceu que não podia mais faltar aulas e tomou SR... Triste, né? Reprovado!'),nl).
+
+embarcados:-
+       nl,write('Você chegou na matéria de Embarcados!'),
+       nl,write('Pra passar é bem simples, você só precisa automatizar sua casa toda!'),
+       nl,write('Que bom que você mora sozinho em uma quitinete de 1 cômodo! Vai ser fácil!'),
+       nl,write('Escolha o que ligar e em qual ordem: a.televisão, b.forno elétrico e c.iluminação'),
+       nl,write('Resposta (exemplo = ac):'),
+       Resp1='cba',Resp2='cab',Resp3='cb',Resp4='ca',
+       nl,read(Ordem),
+       (Ordem = Resp1 -> write('Você ficou assistindo TV com o forno ligado e sua casa pegou fogo! Reprovado!'),nl ;
+       Ordem = Resp2 -> write('Você ficou assistindo TV com o forno ligado e sua casa pegou fogo! Reprovado!'),nl ;
+       Ordem = Resp3 -> write('Muito bem, você foi aprovado!'),nl ;
+       Ordem = Resp4 -> write('Muito bem, você foi aprovado!'), nl ;
+       write('Você precisa acender a luz primeiro! Reprovado!'),nl).
+       
