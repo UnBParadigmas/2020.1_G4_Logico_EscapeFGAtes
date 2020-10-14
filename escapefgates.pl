@@ -122,4 +122,39 @@ embarcados:-
        Ordem = Resp3 -> write('Muito bem, você foi aprovado!'),nl ;
        Ordem = Resp4 -> write('Muito bem, você foi aprovado!'), nl ;
        write('Você precisa acender a luz primeiro! Reprovado!'),nl).
-       
+
+%pricom:-
+
+
+%design:-
+
+
+proj_estr_veiculos:-
+       nl,write('Agora estamos na matéria de Projeto de Estruturas de Veículos!'),
+       nl,write('Você precisa conseguir instalar um simulador pra passar nessa matéria...'),
+       nl,write('Escolha o que fazer:'),
+       nl,write('1. Usar o simulador no computador da faculdade'),
+       nl,write('2. Instalar no meu computador'),
+       nl,write('3. Pedir a ajuda de um amigo'),
+       nl,read(Num),
+       (Num =:= 1 -> write('Você não conseguiu usar o computador o suficiente pra aprender como usar o simulador e foi mal nas provas... Reprovado.') ;
+       Num =:= 2 -> write('Clique no link certo para conseguir fazer a instalação'),nl,link ; 
+       Num =:= 3 -> write('Seu amigo está ocupado, e agora?'),nl,amigo).
+
+       link:- 
+       nl,write('1. www.simulador.com'),
+       nl,write('2. www.papodenerd.com'),
+       nl,write('3. www.twitter.com'),
+       nl,read(Link),
+       (Link =:= 1 -> write('Parabéns, você conseguiu! Aprovado :D') ;
+       Link =:= 2 -> write('Esse link te encaminhou pra um passo-a-passo de como instalar no Linux e você desistiu quando viu que tinha que abrir o terminal... Reprovado :/') ;
+       Link =:= 3 -> write('O professor pegou você distraído e você foi reprovado!'),nl).
+
+       amigo:-
+       nl,write('1. Dar um chocolate para ele'),
+       nl,write('2. Argumentar que você carregou ele naquela outra matéria'),
+       nl,write('3. Tentar baixar sozinho'),
+       nl,read(N),
+       (N =:= 1 -> write('Você conseguiu convencê-lo a tirar um tempinho e instalar pra você. Parabéns, aprovado!') ;
+       N =:= 2 -> write('Seu amigo achou que você foi rude em jogar isso na cara dele e não instalou nada pra você... Reprovado! (e sozinho)'),nl; 
+       N =:= 3 -> write('Clique no link certo para conseguir fazer a instalação'),nl,link).
