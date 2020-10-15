@@ -106,8 +106,14 @@ mds:-write('Você chegou em MDS!'),nl,
               write('Mas pera! Isso virou AmongUS? Acho que tem um impostor entre nós...'),nl,
               write('Você acaba de olhar o repositório, e enquanto você tem 120 commits, tem um casa com apenas 14..'),nl,
               write('Descubra quem é!'),nl,
+              write('commits(andre,120)'),nl,
+              write('commits(pedro,180)'),nl,
+              write('commits(biel,143)'),nl,
+              write('commits(aara,230)'),nl,
+              write('commits(jorge,14)'),nl,
               read(Commit)
-              
+              (Commit=="jorge" -> write('Aprovado!Maldito jorge!'):write('Reprovou! Será que o migué era você?')).
+
               
 
 
@@ -152,6 +158,27 @@ fso:- write('Você chegou em FSO - Fundamentos de Sistemas Operacionais'),nl,
       (Resposta = 'Linux' -> write('Aprovado!'),nl,zerar_contador ; write('Reprovado!'),nl,mainIncrement,fso).
 
 %Ano4
+
+
+desenho:-     write('Caramba! você chegou na matéria mais díficil do curso de software! Arquitetura e Desenho de Software!!!'),nl,
+              write('Mas é muito comum as pessoas saírem dessa matéria amando nossa queria professora Milene!'),nl,
+              write('Quer saber qual ser mistico a mulilene vira segunda e sexta, de 10h as 12h?'),nl,
+              write('então, digite!milene(dias(dia1,dia2),hor(hora1,hora2),CriaturaMistica).'),nl,
+
+
+              write('milene(dias(terça,sexta),hor(15,17),fada).'),nl,
+              write('milene(dias(segunda,quarta),hor(8,12),unicórnio).'),nl,
+              write('milene(dias(quinta,sexta),hor(9,19),perfeiçãoEmPessoa).'),nl,
+              write('milene(dias(terça,sexta),hor(8,11),mauMauSlayer).'),nl,
+              write('milene(dias(quarta,quinta),hor(14,18),bella).'),nl,
+              write('milene(dias(segunda,sexta),hor(10,12),profDeDesenho).'),nl,
+              write('milene(dias(segunda,quarta),hor(18,22),tinkerBell).'),nl,
+              write('milene(dias(quinta,quarta),hor(20,21),donaDoMundo).'),nl,
+              write('milene(dias(segunda,sexta),hor(13,14),pessoa).'),nl,
+              write('milene(dias(segunda,sexta),hor(11,12),diretora).'),nl,
+              write('Sua resposta: '),read(Resposta),nl,
+      (Resposta = 'profDeDesenho' -> write('Ela é muitas coisas, mas Prof de desenho é uma das melhores! Aprovado!'):write('Reprovado!')).
+
 
 subtractor_bateria(Bateria, Celular) :- Bateria - 20 #= Celular, write(Celular).
 counter_bateria(Bateria, Celular) :- Bateria + 0 #= Celular,write(Celular).

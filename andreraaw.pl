@@ -24,8 +24,13 @@ mds:-write('Você chegou em MDS!'),nl,
               write('Mas pera! Isso virou AmongUS? Acho que tem um impostor entre nós...'),nl,
               write('Você acaba de olhar o repositório, e enquanto você tem 120 commits, tem um casa com apenas 14..'),nl,
               write('Descubra quem é!'),nl,
+              write('commits(andre,120)'),nl,
+write('commits(pedro,180)'),nl,
+write('commits(biel,143)'),nl,
+write('comits(aara,230)'),nl,
+write('commits(jorge,14)'),nl,
               read(Commit)
-              (Commit=="Jorge" -> write('Aprovado'),nl,mainIncrementa,eletricidade ; write('Escolha 3 correta!')).
+              (Commit=="jorge" -> write('Aprovado!Maldito jorge!'):write('Reprovou! Será que o migué era você?')).
 
 
 
