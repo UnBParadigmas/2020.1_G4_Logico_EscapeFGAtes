@@ -32,7 +32,7 @@ trancar:-write('É uma pena que não tenha conseguido se formar. Mais sorte da p
 jogar:-nl,write('Bem-vindo, parabéns por passar o vestibular, vocễ agora deve enfrentar os 5 anos de faculdade, será que você irá sobreviver '),nl,
        write('Como calouro você não escolhe, por isso deverá enfrentar seus primeiros 2 semestres passando nas matérias que lhe foram dadas. Boa sorte!'),nl,calculo.
 
-jubilar:-write('Você reprovou mais de 3 vezes, você foi Jubilado!'),nl,!.
+jubilar:-nl,write('Você reprovou mais de 3 vezes, você foi Jubilado!'),nl,!,false.
 
 
 formou_aeroespacial:-write('Parabéns você se formou em Aeroespacial e ganhou o jogo!'),nl,
