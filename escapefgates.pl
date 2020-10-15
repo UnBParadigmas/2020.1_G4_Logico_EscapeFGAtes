@@ -34,6 +34,21 @@ jogar:-nl,write('Bem-vindo, parabéns por passar o vestibular, vocễ agora deve
 
 jubilar:-write('Você reprovou mais de 3 vezes, você foi Jubilado!'),nl,!.
 
+formou_aeroespacial:-write('Parabéns você se formou em Aeroespacial e ganhou o jogo!'),nl,
+             write('ESCAPE FGATES: Você se formou!').
+
+formou_automotiva:-write('Parabéns você se formou em Automotiva e ganhou o jogo!'),nl,
+             write('ESCAPE FGATES: Você se formou!').
+
+formou_eletronica:-write('Parabéns você se formou em Eletrônica e ganhou o jogo!'),nl,
+             write('ESCAPE FGATES: Você se formou!').
+
+formou_energia:-write('Parabéns você se formou em Energia e ganhou o jogo!'),nl,
+             write('ESCAPE FGATES: Você se formou!').
+
+formou_software:-write('Parabéns você se formou em Software e ganhou o jogo!'),nl,
+             write('ESCAPE FGATES: Você se formou!').
+
 %Ano1
 
 calculo:-nl,write('Seu primeiro desafio, Cálculo, a matéria que é falada por todos os estudantes de engenharia'),nl,
