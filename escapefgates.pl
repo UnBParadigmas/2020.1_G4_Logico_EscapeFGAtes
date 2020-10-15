@@ -5,7 +5,7 @@
 
 :- dynamic contador/1.
 
-contador(0).
+contador(1).
 
 %Minha alteracao
 incrementaContador :- contador(X), Y is X, retract(contador(X)), Z is (Y+1), assert(contador(Z)), (X = 3 -> jubilar ; write('Você reprovou '),write(X),write(' vezes')),nl.
@@ -14,7 +14,7 @@ mainIncrementa :- incrementaContador.
 
 decrementaContador :- contador(X), Y is X, retract(contador(X)), Z is (Y-1), assert(contador(Z)).
 
-zerar_contador :- retract(contador(X)),assert(contador(0)).
+zerar_contador:-retract(contador(X)),assert(contador(1)).
 
 %Comandos
 
@@ -32,7 +32,7 @@ trancar:-write('É uma pena que não tenha conseguido se formar. Mais sorte da p
 jogar:-nl,write('Bem-vindo, parabéns por passar o vestibular, vocễ agora deve enfrentar os 5 anos de faculdade, será que você irá sobreviver '),nl,
        write('Como calouro você não escolhe, por isso deverá enfrentar seus primeiros 2 semestres passando nas matérias que lhe foram dadas. Boa sorte!'),nl,calculo.
 
-jubilar:-write('Você reprovou mais de 3 vezes, você foi Jubilado!'),!.
+jubilar:-write('Você reprovou mais de 3 vezes, você foi Jubilado!'),nl,!.
 
 %Ano1
 
@@ -52,6 +52,7 @@ intro_engenharia:-nl,write('Você está fazendo Introdução a Engenharia, seu p
                   write('Sabendo que no seu grupo tem o Andre, a Sara, o Gabriel e o Pedro'),nl,
                   write('E que cada um corresponde respectivamente aos numeros 1, 2, 3 e 4, e que você como lider não participa dessa organização'),nl,
                   write('Organize a tabela em forma de lista: '),nl,
+                  write('exemplo: [1,2,3,4,1,2,3,4,1,2,3,4,1,2,3,4]'),nl,
                   write('Tabela:'),nl,
                   write('4 1 ? ?'),nl,
                   write('2 3 4 1'),nl,
@@ -62,9 +63,49 @@ intro_engenharia:-nl,write('Você está fazendo Introdução a Engenharia, seu p
                   read(Lista),
                   (Lista = Resposta -> write('Parabéns a lista está correta! você foi aprovado!'),ferias(1) ; write('É uma pena, mas você reprovou a matéria, por causa disso terá que fazê-la novamente'),nl,mainIncrementa,intro_engenharia).
 
-%Férias
+%Férias - Tronco Comum
 
-ferias(1):-nl,write('Parabéns por sobreviver esse primeiro ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 2 te aguarda'),nl, curso.
+ferias(1):-nl,write('Parabéns por sobreviver esse primeiro ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 2 te aguarda!'),nl, curso.
+
+%Férias - Aeroespacial
+
+ferias(2):-nl,write('Parabéns por sobreviver o segundo ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 3 te aguarda!'),nl.
+
+ferias(3):-nl,write('Parabéns por sobreviver o terceiro ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 4 te aguarda!'),nl.
+
+ferias(4):-nl,write('Parabéns por sobreviver o quarto ano, feliz natal e um ótimo ano novo, aproveite suas férias, o último ano, o Ano 5 te aguarda!'),nl.
+
+%Férias - Automotiva
+
+ferias(2):-nl,write('Parabéns por sobreviver o segundo ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 3 te aguarda!'),nl.
+
+ferias(3):-nl,write('Parabéns por sobreviver o terceiro ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 4 te aguarda!'),nl.
+
+ferias(4):-nl,write('Parabéns por sobreviver o quarto ano, feliz natal e um ótimo ano novo, aproveite suas férias, o último ano, o Ano 5 te aguarda!'),nl.
+
+%Férias - Eletrônica
+
+ferias(2):-nl,write('Parabéns por sobreviver o segundo ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 3 te aguarda!'),nl.
+
+ferias(3):-nl,write('Parabéns por sobreviver o terceiro ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 4 te aguarda!'),nl.
+
+ferias(4):-nl,write('Parabéns por sobreviver o quarto ano, feliz natal e um ótimo ano novo, aproveite suas férias, o último ano, o Ano 5 te aguarda!'),nl.
+
+%Férias - Energia
+
+ferias(2):-nl,write('Parabéns por sobreviver o segundo ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 3 te aguarda!'),nl.
+
+ferias(3):-nl,write('Parabéns por sobreviver o terceiro ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 4 te aguarda!'),nl.
+
+ferias(4):-nl,write('Parabéns por sobreviver o quarto ano, feliz natal e um ótimo ano novo, aproveite suas férias, o último ano, o Ano 5 te aguarda!'),nl.
+
+%Férias - Software
+
+ferias(2):-nl,write('Parabéns por sobreviver o segundo ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 3 te aguarda!'),nl.
+
+ferias(3):-nl,write('Parabéns por sobreviver o terceiro ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 4 te aguarda!'),nl.
+
+ferias(4):-nl,write('Parabéns por sobreviver o quarto ano, feliz natal e um ótimo ano novo, aproveite suas férias, o último ano, o Ano 5 te aguarda!'),nl.
 
 %Escolha de curso
 
@@ -75,7 +116,7 @@ curso:- write('Depois de enfrentar seu primeiro ano você terá a oportunidade d
         write('4 - Energia;'),nl,
         write('5 - Software'),nl,
         write('Informe o número do curso que deseja se formar: '),nl,
-        read(Escolha).
+        read(Escolha),
         (Escolha =:= 1 -> write('Você escolheu cursar Aeroespacial! Boa sorte e bom curso!'),nl ,eletromag
         ; Escolha =:= 2 -> write('Você escolheu cursar Automotiva! Boa sorte e bom curso!'),nl,eletromag
         ; Escolha =:= 3 -> write('Você escolheu cursar Eletrônica! Boa sorte e bom curso!'),nl,eletromag
