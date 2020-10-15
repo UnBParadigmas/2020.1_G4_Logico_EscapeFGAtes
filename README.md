@@ -44,10 +44,6 @@ Para iniciar o projeto basta iniciar o SWI Prolog:<br>
 Com o Prolog iniciado você deve carregar o projeto:
 
 `?- [escapefgates].`<br>
-`Warning:    Singleton variables: [X] `<br>
-`true`
-
-Ele apresentará alguns warnings, mas que não vão impedir a execução do projeto.<br>
 
 Com o projeto carregado basta inserir um `iniciar.` e começar a jogar :)
 

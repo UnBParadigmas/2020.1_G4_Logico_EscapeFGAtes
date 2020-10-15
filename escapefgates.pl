@@ -14,7 +14,7 @@ mainIncrementa :- incrementaContador.
 
 decrementaContador :- contador(X), Y is X, retract(contador(X)), Z is (Y-1), assert(contador(Z)).
 
-zerar_contador:-retract(contador(X)),assert(contador(1)).
+zerar_contador:-retract(contador(_)),assert(contador(1)).
 
 %Comandos
 
