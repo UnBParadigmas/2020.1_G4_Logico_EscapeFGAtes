@@ -100,6 +100,18 @@ eletromag:-write('Parabéns, por causa da escolha do seu curso, você veio para 
 
 %Ano3
 
+
+mds:-write('Você chegou em MDS!'),nl,
+              write('Vai ser um semestre muito puxado e cansativo'),nl,
+              write('Mas pera! Isso virou AmongUS? Acho que tem um impostor entre nós...'),nl,
+              write('Você acaba de olhar o repositório, e enquanto você tem 120 commits, tem um casa com apenas 14..'),nl,
+              write('Descubra quem é!'),nl,
+              read(Commit)
+              
+              
+
+
+
 eletricidade:-write('Bem-vindo(a) a eletricidade!'),nl,
               write('Nessa matéria você terá que ligar todos as luzes da sala, em apenas 4 movimentos, você sabe que:'),nl,
               write('As luzes da sala estão desligadas'),nl,
