@@ -328,3 +328,100 @@ eletricidade:-write('Bem-vindo(a) a eletricidade!'),nl,
               write('Escolha 4: '),read(Escolha4),nl,
               (Escolha4 \== 4 -> write('Reprovado'),nl,mainIncrementa,eletricidade ; write('Escolha 4 correta!')),nl,
               write('Parabéns você foi aprovado!'),nl,zerar_contador.
+
+%Ano5
+
+tcc_aeroespacial:-nl,write('Você está prestes a se formar, porém deve enfrentar seu último desafio: O TCC'),nl,
+     write('O desafio é simples, escolha um orientador com horário suficiente para te atender'),nl,
+     write('Será que você terá sorte de escolher o certo?!'),nl,
+     write('Escolha:'),nl,
+     write('1- Orientador1'),nl,
+     random(0, 50, Orientador1),
+     write('2- Orientador2'),nl,
+     random(0, 50, Orientador2),
+     write('3- Orientador3'),nl,
+     random(0, 50, Orientador3),
+     write('4- Orientador4'),nl,
+     random(0, 50, Orientador4),
+     read(Escolha),
+     (Escolha =:= 1, Orientador1 > Orientador2, Orientador1 > Orientador3, Orientador1 > Orientador4 -> write('Aprovado!'),zerar_contador,nl 
+     ; Escolha =:= 2, Orientador2 > Orientador1, Orientador2 > Orientador3, Orientador2 > Orientador4 -> write('Aprovado!'),zerar_contador,nl
+     ; Escolha =:= 3, Orientador3 > Orientador1, Orientador3 > Orientador2, Orientador3 > Orientador4 -> write('Aprovado!'),zerar_contador,nl
+     ; Escolha =:= 4, Orientador4 > Orientador1, Orientador4 > Orientador2, Orientador4 > Orientador3 -> write('Aprovado!'),zerar_contador,nl
+     ; write('Você escolheu um orientador sem tempo algum, ele não pode te ajudar e você acabou reprovando'),nl,mainIncrementa,tcc_aeroespacial).
+
+tcc_automotiva:-nl,write('Você está prestes a se formar, porém deve enfrentar seu último desafio: O TCC'),nl,
+     write('O desafio é simples, escolha um orientador com horário suficiente para te atender'),nl,
+     write('Será que você terá sorte de escolher o certo?!'),nl,
+     write('Escolha:'),nl,
+     write('1- Orientador1'),nl,
+     random(0, 50, Orientador1),
+     write('2- Orientador2'),nl,
+     random(0, 50, Orientador2),
+     write('3- Orientador3'),nl,
+     random(0, 50, Orientador3),
+     write('4- Orientador4'),nl,
+     random(0, 50, Orientador4),
+     read(Escolha),
+     (Escolha =:= 1, Orientador1 > Orientador2, Orientador1 > Orientador3, Orientador1 > Orientador4 -> write('Aprovado!'),zerar_contador,nl 
+     ; Escolha =:= 2, Orientador2 > Orientador1, Orientador2 > Orientador3, Orientador2 > Orientador4 -> write('Aprovado!'),zerar_contador,nl
+     ; Escolha =:= 3, Orientador3 > Orientador1, Orientador3 > Orientador2, Orientador3 > Orientador4 -> write('Aprovado!'),zerar_contador,nl
+     ; Escolha =:= 4, Orientador4 > Orientador1, Orientador4 > Orientador2, Orientador4 > Orientador3 -> write('Aprovado!'),zerar_contador,nl
+     ; write('Você escolheu um orientador sem tempo algum, ele não pode te ajudar e você acabou reprovando'),nl,mainIncrementa,tcc_automotiva).
+
+tcc_eletronica:-nl,write('Você está prestes a se formar, porém deve enfrentar seu último desafio: O TCC'),nl,
+     write('O desafio é simples, escolha um orientador com horário suficiente para te atender'),nl,
+     write('Será que você terá sorte de escolher o certo?!'),nl,
+     write('Escolha:'),nl,
+     write('1- Orientador1'),nl,
+     random(0, 50, Orientador1),
+     write('2- Orientador2'),nl,
+     random(0, 50, Orientador2),
+     write('3- Orientador3'),nl,
+     random(0, 50, Orientador3),
+     write('4- Orientador4'),nl,
+     random(0, 50, Orientador4),
+     read(Escolha),
+     (Escolha =:= 1, Orientador1 > Orientador2, Orientador1 > Orientador3, Orientador1 > Orientador4 -> write('Aprovado!'),zerar_contador,nl 
+     ; Escolha =:= 2, Orientador2 > Orientador1, Orientador2 > Orientador3, Orientador2 > Orientador4 -> write('Aprovado!'),zerar_contador,nl
+     ; Escolha =:= 3, Orientador3 > Orientador1, Orientador3 > Orientador2, Orientador3 > Orientador4 -> write('Aprovado!'),zerar_contador,nl
+     ; Escolha =:= 4, Orientador4 > Orientador1, Orientador4 > Orientador2, Orientador4 > Orientador3 -> write('Aprovado!'),zerar_contador,nl
+     ; write('Você escolheu um orientador sem tempo algum, ele não pode te ajudar e você acabou reprovando'),nl,mainIncrementa,tcc_eletronica).
+
+tcc_energia:-nl,write('Você está prestes a se formar, porém deve enfrentar seu último desafio: O TCC'),nl,
+     write('O desafio é simples, escolha um orientador com horário suficiente para te atender'),nl,
+     write('Será que você terá sorte de escolher o certo?!'),nl,
+     write('Escolha:'),nl,
+     write('1- Orientador1'),nl,
+     random(0, 50, Orientador1),
+     write('2- Orientador2'),nl,
+     random(0, 50, Orientador2),
+     write('3- Orientador3'),nl,
+     random(0, 50, Orientador3),
+     write('4- Orientador4'),nl,
+     random(0, 50, Orientador4),
+     read(Escolha),
+     (Escolha =:= 1, Orientador1 > Orientador2, Orientador1 > Orientador3, Orientador1 > Orientador4 -> write('Aprovado!'),zerar_contador,nl 
+     ; Escolha =:= 2, Orientador2 > Orientador1, Orientador2 > Orientador3, Orientador2 > Orientador4 -> write('Aprovado!'),zerar_contador,nl
+     ; Escolha =:= 3, Orientador3 > Orientador1, Orientador3 > Orientador2, Orientador3 > Orientador4 -> write('Aprovado!'),zerar_contador,nl
+     ; Escolha =:= 4, Orientador4 > Orientador1, Orientador4 > Orientador2, Orientador4 > Orientador3 -> write('Aprovado!'),zerar_contador,nl
+     ; write('Você escolheu um orientador sem tempo algum, ele não pode te ajudar e você acabou reprovando'),nl,mainIncrementa,tcc_energia).
+
+tcc_software:-nl,write('Você está prestes a se formar, porém deve enfrentar seu último desafio: O TCC'),nl,
+     write('O desafio é simples, escolha um orientador com horário suficiente para te atender'),nl,
+     write('Será que você terá sorte de escolher o certo?!'),nl,
+     write('Escolha:'),nl,
+     write('1- Orientador1'),nl,
+     random(0, 50, Orientador1),
+     write('2- Orientador2'),nl,
+     random(0, 50, Orientador2),
+     write('3- Orientador3'),nl,
+     random(0, 50, Orientador3),
+     write('4- Orientador4'),nl,
+     random(0, 50, Orientador4),
+     read(Escolha),
+     (Escolha =:= 1, Orientador1 > Orientador2, Orientador1 > Orientador3, Orientador1 > Orientador4 -> write('Aprovado!'),zerar_contador,nl 
+     ; Escolha =:= 2, Orientador2 > Orientador1, Orientador2 > Orientador3, Orientador2 > Orientador4 -> write('Aprovado!'),zerar_contador,nl
+     ; Escolha =:= 3, Orientador3 > Orientador1, Orientador3 > Orientador2, Orientador3 > Orientador4 -> write('Aprovado!'),zerar_contador,nl
+     ; Escolha =:= 4, Orientador4 > Orientador1, Orientador4 > Orientador2, Orientador4 > Orientador3 -> write('Aprovado!'),zerar_contador,nl
+     ; write('Você escolheu um orientador sem tempo algum, ele não pode te ajudar e você acabou reprovando'),nl,mainIncrementa,tcc_software).
