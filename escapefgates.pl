@@ -186,5 +186,82 @@ proj_estr_veiculos:-
        N =:= 2 -> write('Seu amigo achou que você foi rude em jogar isso na cara dele e não instalou nada pra você... Reprovado! (e sozinho)'),nl; 
        N =:= 3 -> write('Clique no link certo para conseguir fazer a instalação'),nl,link).
 
-%sinais:-
-    
+sinais:-
+       nl,write('Você chegou a Sinais e Sistemas'),
+       nl,write('Vai ter que se esforçar pra passar nessa!'),
+       nl,write('Usando os Sinais X e O ganhe o Jogo da Velha'),
+       nl,Tabela=[a,a,a,a,a,a,a,a,a],
+       mostra([1,2,3,4,5,6,7,8,9]),inicia(Tabela).
+       
+       win(T, P) :- 
+              rwin(T, P);
+              cwin(T, P);
+              dwin(T, P).
+
+       rwin(T, P) :- 
+              T = [P,P,P,_,_,_,_,_,_];
+              T = [_,_,_,P,P,P,_,_,_];
+       	T = [_,_,_,_,_,_,P,P,P].
+
+       cwin(T, P) :- 
+              T = [P,_,_,P,_,_,P,_,_];
+              T = [_,P,_,_,P,_,_,P,_];
+       	T = [_,_,P,_,_,P,_,_,P].
+
+       dwin(T, P) :- 
+              T = [P,_,_,_,P,_,_,_,P];
+       	T = [_,_,P,_,P,_,P,_,_].
+       
+       inicia(T) :- win(T, x), write('Aprovado!').
+       inicia(T) :- win(T, o), write('Reprovado!').
+       inicia(T) :- 
+              read(N),
+              xmove(T, N, NewT),
+              mostra(NewT),
+              oplay(NewT, NewnewT),
+              mostra(NewnewT),
+              inicia(NewnewT).
+
+       omove([a,B,C,D,E,F,G,H,I], P, [P,B,C,D,E,F,G,H,I]).
+       omove([A,a,C,D,E,F,G,H,I], P, [A,P,C,D,E,F,G,H,I]).
+       omove([A,B,a,D,E,F,G,H,I], P, [A,B,P,D,E,F,G,H,I]).
+       omove([A,B,C,a,E,F,G,H,I], P, [A,B,C,P,E,F,G,H,I]).
+       omove([A,B,C,D,a,F,G,H,I], P, [A,B,C,D,P,F,G,H,I]).
+       omove([A,B,C,D,E,a,G,H,I], P, [A,B,C,D,E,P,G,H,I]).
+       omove([A,B,C,D,E,F,a,H,I], P, [A,B,C,D,E,F,P,H,I]).
+       omove([A,B,C,D,E,F,G,a,I], P, [A,B,C,D,E,F,G,P,I]).
+       omove([A,B,C,D,E,F,G,H,a], P, [A,B,C,D,E,F,G,H,P]).
+
+       xmove([a,B,C,D,E,F,G,H,I], 1, [x,B,C,D,E,F,G,H,I]).
+       xmove([A,a,C,D,E,F,G,H,I], 2, [A,x,C,D,E,F,G,H,I]).
+       xmove([A,B,a,D,E,F,G,H,I], 3, [A,B,x,D,E,F,G,H,I]).
+       xmove([A,B,C,a,E,F,G,H,I], 4, [A,B,C,x,E,F,G,H,I]).
+       xmove([A,B,C,D,a,F,G,H,I], 5, [A,B,C,D,x,F,G,H,I]).
+       xmove([A,B,C,D,E,a,G,H,I], 6, [A,B,C,D,E,x,G,H,I]).
+       xmove([A,B,C,D,E,F,a,H,I], 7, [A,B,C,D,E,F,x,H,I]).
+       xmove([A,B,C,D,E,F,G,a,I], 8, [A,B,C,D,E,F,G,x,I]).
+       xmove([A,B,C,D,E,F,G,H,a], 9, [A,B,C,D,E,F,G,H,x]).
+       xmove(T, _, T) :- write('Movimento não é possível'), nl.
+
+       mostra([A,B,C,D,E,F,G,H,I]) :-
+	       write('|'),
+	       write([A,B,C]),write('|'),
+              nl,write('|'),
+	       write([D,E,F]),write('|'),
+              nl,write('|'),
+              write([G,H,I]),write('|'),nl,nl.
+
+       can_x_win(T) :- omove(T, x, NewT), win(NewT, x).
+
+       oplay(T,NewT) :-
+              omove(T, o, NewT),
+              win(NewT, o),!.
+       oplay(T,NewT) :-
+              omove(T, o, NewT),
+              not(can_x_win(NewT)).
+       oplay(T,NewT) :-
+              omove(T, o, NewT).
+       oplay(T,NewT) :-
+              not(member(a,T)),!,
+              write('Empate'), nl,
+              NewT = T.
