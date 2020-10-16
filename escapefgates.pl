@@ -542,6 +542,25 @@ redes:-
 
 %Ano5
 
+sist_hidro:-write('Você chegou a Sistemas Hidroelétricos'),nl,
+            write('Por conta do conteúdo ensinando você deverá ir ao laboratório, poreḿ antes de ir você esta com sede'),nl,
+            write('Os bebedouros da FGA funcionam de uma maneira diferente, ou você bebe água ou você toma um banho'),nl,
+            write('Seu desafio é ir para o laboratório sem estar encharcado'),nl,
+            write('Por isso escolha o bebedouro com cuidado: '),nl,
+            write('1- Bebedouro 1'),nl,
+            write('2- Bebedouro 2'),nl,
+            write('3- Bebedouro 3'),nl,
+            write('4- Bebedouro 4'),nl,
+            write('5- Bebedouro 5'),nl,
+            write('6- Bebedouro 6'),nl,
+            write('7- Bebedouro 7'),nl,
+            write('8- Bebedouro 8'),nl,
+            read(Bebedouro),nl,
+            (Bebedouro =:= 3 -> write('Parabéns você escolheu o bebedouro com gosto de ferro, mas que não te dá um banho. Aprovado!'),nl,zerar_contador,tcc_energia
+            ; Bebedouro =:= 6 -> write('Parabéns você escolheu o bebedouro que não sai quase nada de água, mas que não te dá um banho. Aprovado!'),nl,zerar_contador,tcc_energia
+            ; write('Infelizmente o bebedouro de encharcou e você foi reprovado!'),nl,mainIncrementa,sist_hidro).
+
+
 embarcados:-
        nl,write('Você chegou na matéria de Embarcados!'),
        nl,write('Pra passar é bem simples, você só precisa automatizar sua casa toda!'),
