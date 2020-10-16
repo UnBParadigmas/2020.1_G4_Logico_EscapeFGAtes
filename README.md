@@ -49,7 +49,7 @@ Com o projeto carregado basta inserir um `iniciar.` e começar a jogar :)
 
 
 ## Vídeo
-Adicione 1 ou mais vídeos com a execução do projeto.
+Link: https://youtu.be/AM9tCtn5zdM
 
 ## Outros 
 Abaixo temos algumas fotos para o diagrama que foi criado com o intuito de esclarecer os possíveis caminhos a serem percorridos, caso não seja nítido será deixado também o link.
