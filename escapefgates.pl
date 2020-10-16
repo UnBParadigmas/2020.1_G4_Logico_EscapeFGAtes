@@ -89,7 +89,7 @@ ferias_aeroespacial(2):-nl,write('Parabéns por sobreviver o segundo ano, feliz 
 
 ferias_aeroespacial(3):-nl,write('Parabéns por sobreviver o terceiro ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 4 te aguarda!'),nl,mecflu.
 
-ferias_aeroespacial(4):-nl,write('Parabéns por sobreviver o quarto ano, feliz natal e um ótimo ano novo, aproveite suas férias, o último ano, o Ano 5 te aguarda!'),nl.
+ferias_aeroespacial(4):-nl,write('Parabéns por sobreviver o quarto ano, feliz natal e um ótimo ano novo, aproveite suas férias, o último ano, o Ano 5 te aguarda!'),nl,dinaest.
 
 %Férias - Automotiva
 
@@ -580,7 +580,7 @@ eletricidade_automotiva:-write('Bem-vindo(a) a eletricidade!'),nl,
               (Escolha3 \== 3 -> write('Reprovado'),nl,mainIncrementa,eletricidade_automotiva ; write('Escolha 3 correta!')),nl,
               write('Escolha 4: '),read(Escolha4),nl,
               (Escolha4 \== 4 -> write('Reprovado'),nl,mainIncrementa,eletricidade_automotiva ; write('Escolha 4 correta!')),nl,
-              write('Parabéns você foi aprovado!'),nl,zerar_contador.
+              write('Parabéns você foi aprovado!'),nl,zerar_contador,dinv.
 
 eletricidade_energia:-write('Bem-vindo(a) a eletricidade!'),nl,
               write('Nessa matéria você terá que ligar todos as luzes da sala, em apenas 4 movimentos, você sabe que:'),nl,
@@ -630,7 +630,34 @@ redes:-
               (Pessoa = 'sara' -> write('Parabéns! O hacker foi jubilado e você conseguiu passar na matéria!'),nl,zerar_contador,bd ;
               write('Você falhou em encontrar o hacker e o professor reprovou TODOS!!!'),nl,mainIncrementa,redes).
 
+dinv:- nl,write('Você está cursando Dinamica de Veiculos!!'),nl,
+       write('Enquanto estudava a materia, o professor pediu pra voce descobrir o motivo do carro dele nao acelerar quando ele aperta o pedal'),nl,
+       write('Ao olhar, voce nota 3 coisas estranhas, sendo elas:'),nl,
+       write('1 - O painel esta todo escuro'),nl,
+       write('2 - O som desligado'),nl,
+       write('3 - Voce nao sabe onde esta a chave'),nl,
+       write('O que o carro precisa para funcionar?'),nl,
+       read(Resposta),nl,
+       (Resposta = 'ligar' -> write('O professor ficou envergonhado e te passou! Parabens!'),nl,zerar_contador,ferias_automotiva(4)
+       ; write('Como que voce errou isso? Reprovado!!!'),nl,mainIncrementa,dinv).
+
+
+
 %Ano5
+
+dinaest:- nl,write('Você está prestes a cursar DINAEST, a ultima materia de Aero antes do TCC!!'),nl,
+         write('Ao fazer a materia, voce notou que o professor comecou a falar em outra lingua que você nao entende... Ou sera outra coisa?'),nl,
+         write('Tente adivinhar a lingua que o professor esta falando!'),nl,
+         write('Ik hoop dat je het niet begrijpt'),nl,
+         write('1 - Alemao'),nl,
+         write('2 - Sueco'),nl,
+         write('3 - Holandes'),nl,
+         write('4 - Russo'),nl,
+         write('5 - Noruegues'),nl,
+         read(Resposta),nl,
+        (Resposta \== 3 -> write('Reprovado'),nl,mainIncrementa,dinaest ; write('Aprovado!'),nl,zerar_contador,tcc_aeroespacial).
+
+
 
 desenho:-write('Caramba! você chegou na matéria mais díficil do curso de software! Arquitetura e Desenho de Software!!!'),nl,
          write('Mas é muito comum as pessoas saírem dessa matéria amando nossa queria professora Milene!'),nl,
@@ -698,7 +725,7 @@ proj_estr_veiculos:-
        nl,write('2. www.papodenerd.com'),
        nl,write('3. www.twitter.com'),
        nl,read(Link),
-       (Link =:= 1 -> write('Parabéns, você conseguiu! Aprovado :D'),nl,zerar_contador ;
+       (Link =:= 1 -> write('Parabéns, você conseguiu! Aprovado :D'),nl,zerar_contador,tcc_automotiva ;
        Link =:= 2 -> write('Esse link te encaminhou pra um passo-a-passo de como instalar no Linux e você desistiu quando viu que tinha que abrir o terminal... Reprovado :/'),nl,mainIncrementa,proj_estr_veiculos ;
        Link =:= 3 -> write('O professor pegou você distraído e você foi reprovado!'),nl,mainIncrementa,proj_estr_veiculos).
 
