@@ -253,6 +253,11 @@ fso:- write('Você chegou em FSO - Fundamentos de Sistemas Operacionais'),nl,
       write('Sua resposta: '),read(Resposta),nl,
       (Resposta = 'Linux' -> write('Aprovado!'),nl,zerar_contador ; write('Reprovado!'),nl,mainIncrementa,fso).
 
+design:- nl,write('Você esta cursando a materia de Design de veiculos e precisa responder uma pergunta pra passar!'),nl,
+         write('O que um time de futebol e um carro tem em comum?'),nl,
+         read(Resposta),nl,
+        (Resposta = 'volante' -> write('Aprovado!'),nl,zerar_contador ; Resposta = 'Volante' -> write('Aprovado'),nl,zerar_contador ; write('Reprovado!'),nl,mainIncrementa,design).
+
 %Ano4
 
 subtractor_bateria(Bateria, Celular) :- Bateria - 20 #= Celular, write(Celular).
