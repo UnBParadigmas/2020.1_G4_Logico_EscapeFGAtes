@@ -265,3 +265,32 @@ sinais:-
               not(member(a,T)),!,
               write('Empate'), nl,
               NewT = T.
+
+mecsol2:-
+       nl,write('Bem-vindo a Mecânica dos Sólidos 2'),
+       nl,write('Essa é uma matéria dessas que você nunca escuta alguém falando boas coisas, mas não se preocupe! Você vai conseguir!'),
+       nl,write('Seu desafio é manter sua saúde mental equilibrada'),
+       nl,write('Agora você precisa decidir o que priorizar:'),
+       nl,nl,write('1. Marcar suas sessões de psicoterapia'),
+       nl,write('2. Iniciar a leitura do livro indicado pelo professor'),
+       nl,read(Decisao1),
+       random(0,25,Dec11),random(0,25,Dec12),
+       (Decisao1 =:= 1 -> S1 = Dec11 + 30 ; C1 = Dec12 + 25),
+
+       nl,write('1. Descansar aos domingos'),
+       nl,write('2. Virar a noite fazendo listas de exercícios'),
+       nl,read(Decisao2),
+       random(0,25,Dec21),random(0,25,Dec22),
+       (Decisao2 =:= 1 -> S2 = Dec21 + 30 ; C2 = Dec22 + 25),
+
+       nl,write('1. Beber com os amigos na reta final do semestre'),
+       nl,write('2. Estudar com os amigos na reta final do semestre'),
+       nl,read(Decisao3),
+       random(0,25,Dec31),random(0,25,Dec32),
+       (Decisao3 =:= 1 -> S3 = Dec31 + 30 ; C3 = Dec32 + 25),
+
+       (Saude = (S1 + S2 + S3)), (Conhecimento = (C1 + C2 + C3)), compara(Saude,Conhecimento).
+
+       compara(S,C):- 
+              ((S - C) >= 20 -> write('Aprovado!') ; write('Reprovado!')).
+
