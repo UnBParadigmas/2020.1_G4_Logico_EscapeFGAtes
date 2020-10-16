@@ -93,7 +93,7 @@ ferias_aeroespacial(4):-nl,write('Parabéns por sobreviver o quarto ano, feliz n
 
 %Férias - Automotiva
 
-ferias_automotiva(2):-nl,write('Parabéns por sobreviver o segundo ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 3 te aguarda!'),nl.
+ferias_automotiva(2):-nl,write('Parabéns por sobreviver o segundo ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 3 te aguarda!'),nl,design.
 
 ferias_automotiva(3):-nl,write('Parabéns por sobreviver o terceiro ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 4 te aguarda!'),nl,eletricidade_automotiva.
 
@@ -177,10 +177,10 @@ eletromag_eletronica:-write('Parabéns, por causa da escolha do seu curso, você
            write('Se você errar, não terminará o trabalho e você e seu grupo irão reprovar'),nl,
            nl,write('Qual tomada você irá escolher'),nl,
            read(Tomada),
-           (Tomada =:= 1 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador,embarcados 
-           ; Tomada =:= 3 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador,embarcados
-           ; Tomada =:= 4 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador,embarcados
-           ; Tomada =:= 6 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador,embarcados
+           (Tomada =:= 1 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador,circuitos_eletronica 
+           ; Tomada =:= 3 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador,circuitos_eletronica
+           ; Tomada =:= 4 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador,circuitos_eletronica
+           ; Tomada =:= 6 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador,circuitos_eletronica
            ; write('Você escolheu uma tomada que não funcionava, você e seu grupo reprovaram!'),nl,mainIncrementa,eletromag_eletronica).
 
 eletromag_energia:-write('Parabéns, por causa da escolha do seu curso, você veio para Eletromagnetismo, ou como gostam de chamar, eletromag'),nl,
@@ -191,10 +191,10 @@ eletromag_energia:-write('Parabéns, por causa da escolha do seu curso, você ve
            write('Se você errar, não terminará o trabalho e você e seu grupo irão reprovar'),nl,
            nl,write('Qual tomada você irá escolher'),nl,
            read(Tomada),
-           (Tomada =:= 1 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador,circuitos
-           ; Tomada =:= 3 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador,circuitos
-           ; Tomada =:= 4 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador,circuitos
-           ; Tomada =:= 6 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador,circuitos
+           (Tomada =:= 1 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador,circuitos_energia
+           ; Tomada =:= 3 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador,circuitos_energia
+           ; Tomada =:= 4 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador,circuitos_energia
+           ; Tomada =:= 6 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador,circuitos_energia
            ; write('Você escolheu uma tomada que não funcionava, você e seu grupo reprovaram!'),nl,mainIncrementa,eletromag_energia).
 
 embarcados:-
@@ -205,17 +205,23 @@ embarcados:-
        nl,write('Resposta (exemplo = ac):'),
        Resp1='cba',Resp2='cab',Resp3='cb',Resp4='ca',
        nl,read(Ordem),
-       (Ordem = Resp1 -> write('Você ficou assistindo TV com o forno ligado e sua casa pegou fogo! Reprovado!'),nl,mainIncrementa,redes ;
-       Ordem = Resp2 -> write('Você ficou assistindo TV com o forno ligado e sua casa pegou fogo! Reprovado!'),nl,mainIncrementa,redes ;
-       Ordem = Resp3 -> write('Muito bem, você foi aprovado!'),nl,zerar_contador,ferias_eletronica(2) ;
-       Ordem = Resp4 -> write('Muito bem, você foi aprovado!'), nl,zerar_contador,ferias_eletronica(2) ;
+       (Ordem = Resp1 -> write('Você ficou assistindo TV com o forno ligado e sua casa pegou fogo! Reprovado!'),nl,mainIncrementa,embarcados ;
+       Ordem = Resp2 -> write('Você ficou assistindo TV com o forno ligado e sua casa pegou fogo! Reprovado!'),nl,mainIncrementa,embarcados ;
+       Ordem = Resp3 -> write('Muito bem, você foi aprovado!'),nl,zerar_contador,ferias_eletronica(4) ;
+       Ordem = Resp4 -> write('Muito bem, você foi aprovado!'), nl,zerar_contador,ferias_eletronica(4) ;
        write('Você precisa acender a luz primeiro! Reprovado!'),nl,mainIncrementa,embarcados).
 
-circuitos:-write('Bem vindo a circuitos, é muita matéria que exigirá muito de você'),nl,
+circuitos_energia:-write('Bem vindo a circuitos, é muita matéria que exigirá muito de você'),nl,
            write('Por conta disso decida, quantos exercícios você deverá fazer para passar na matéria?'),nl,
            read(Resultado),nl,
            (Resultado >= 100 -> write('Aprovado! O professor gostaria de passar mais mas infelizmente não tem tempo'),nl,zerar_contador,ferias_energia(2)
-           ; write('Reprovado! você foi muito inocente em sua resposta.'),nl,mainIncrementa,circuitos).
+           ; write('Reprovado! você foi muito inocente em sua resposta.'),nl,mainIncrementa,circuitos_energia).
+
+circuitos_eletronica:-write('Bem vindo a circuitos, é muita matéria que exigirá muito de você'),nl,
+           write('Por conta disso decida, quantos exercícios você deverá fazer para passar na matéria?'),nl,
+           read(Resultado),nl,
+           (Resultado >= 100 -> write('Aprovado! O professor gostaria de passar mais mas infelizmente não tem tempo'),nl,zerar_contador,ferias_eletronica(2)
+           ; write('Reprovado! você foi muito inocente em sua resposta.'),nl,mainIncrementa,circuitos_eletronica).
 
 mds:-write('Você chegou em MDS!'),nl,
      write('Vai ser um semestre muito puxado e cansativo'),nl,
@@ -425,7 +431,7 @@ termodinamica_eletronica:-
        nl,read(Op),
        (Op =:= 1 -> write('O RU é aberto! Você não conservou seu calor pois foi atingido por uma rajada de vento frio e poeira... Reprovado!'),nl,mainIncrementa,termodinamica_eletronica ;
        Op =:= 2 -> write('Você esqueceu que o Obelisco não é um local fechado... Seu calor não foi conservado e você congelou. Reprovado!'),nl,mainIncrementa,termodinamica_eletronica ;
-       Op =:= 3 -> write('Parabéns! Com a biblioteca fechadinha e todos se escondendo lá, está bem quentinho! Aprovado!!!'),nl,zerar_contador ;
+       Op =:= 3 -> write('Parabéns! Com a biblioteca fechadinha e todos se escondendo lá, está bem quentinho! Aprovado!!!'),nl,zerar_contador,embarcados ;
        Op =:= 4 -> write('O CA é um lugar bem isolado, mas você esqueceu que ele está fechado e morreu de frio tentando abrir a porta. Que pena, reprovado!'),nl,mainIncrementa,termodinamica_eletronica ; 
        Op =:= 5 -> write('Você esqueceu que não podia mais faltar aulas e tomou SR... Triste, né? Reprovado!'),nl,mainIncrementa,termodinamica_eletronica).
 
@@ -656,7 +662,7 @@ pricom:-
        (Esc =:= 1,Sorte =:= 1 -> write('Nossa, você teve muita sorte! O professor não te pegou colando e você foi aprovado!'),nl,zerar_contador,tcc_eletronica ; 
        Esc =:= 1,Sorte =:= 0 -> write('O professor te pegou colando e resolveu que você merecia um SR. Reprovado! :o'),nl,mainIncrementa,pricom  ;
        Esc =:= 2 -> write('Você estudou demais, esqueceu de dormir e se alimentar direito e acabou sendo internado! O professor não aceitou o atestado e você reprovou!'),nl,mainIncrementa,pricom ;
-       Esc =:= 3 -> write('Parabéns pelo seu esforço e equilíbrio, você conseguiu! Aprovado!!'),nl,zerar_contador).
+       Esc =:= 3 -> write('Parabéns pelo seu esforço e equilíbrio, você conseguiu! Aprovado!!'),nl,zerar_contador,tcc_eletronica).
        
 proj_estr_veiculos:-
        nl,write('Agora estamos na matéria de Projeto de Estruturas de Veículos!'),
