@@ -133,12 +133,27 @@ pricom:-
        nl,read(Esc),
        random(0,1,Sorte),
        (Esc =:= 1,Sorte =:= 1 -> write('Nossa, você teve muita sorte! O professor não te pegou colando e você foi aprovado!') ; 
-       Esc =:= 1,Sorte =:= 0 -> write('O professor te pegou colando e resolveu que você merecia um SR :o Reprovado!') ;
+       Esc =:= 1,Sorte =:= 0 -> write('O professor te pegou colando e resolveu que você merecia um SR. Reprovado! :o') ;
        Esc =:= 2 -> write('Você estudou demais, esqueceu de dormir e se alimentar direito e acabou sendo internado! O professor não aceitou o atestado e você reprovou!') ;
        Esc =:= 3 -> write('Parabéns pelo seu esforço e equilíbrio, você conseguiu! Aprovado!!'),nl).
 
 
-%design:-
+ted:-
+       statistics(runtime,[Start|_]), timeOut(Start).
+
+       timeOut(X) :- Timeout = X + 5, doSomething, totalTime(X).
+
+       totalTime(Z) :- statistics(runtime,[Stop|_]), TotalTime = Stop - Z, avalia(TotalTime).
+
+       avalia(A) :- (A >= 5 -> write('Reprovado!') ; write('(atendeu ao tempo!)')).
+
+       doSomething :- nl,write('Você chegou à Teoria Eletrônica Digital'),
+                     nl,write('Vai dar tudo certo, se você for capaz de copiar todo o conteúdo passado no quadro!!!'),
+                     nl,write('Copie a frase antes que o professor apague:'),
+                     nl,(Quadro='Circuitos Combinacionais não possuem memória'),
+                     write(Quadro),nl,
+                     read(Frase),
+                     (Frase = Quadro ; write('Reprovado!')).
 
 
 proj_estr_veiculos:-
@@ -170,3 +185,6 @@ proj_estr_veiculos:-
        (N =:= 1 -> write('Você conseguiu convencê-lo a tirar um tempinho e instalar pra você. Parabéns, aprovado!') ;
        N =:= 2 -> write('Seu amigo achou que você foi rude em jogar isso na cara dele e não instalou nada pra você... Reprovado! (e sozinho)'),nl; 
        N =:= 3 -> write('Clique no link certo para conseguir fazer a instalação'),nl,link).
+
+%sinais:-
+    
