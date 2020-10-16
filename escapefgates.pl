@@ -85,7 +85,7 @@ ferias(1):-nl,write('Parabéns por sobreviver esse primeiro ano, feliz natal e u
 
 %Férias - Aeroespacial
 
-ferias_aeroespacial(2):-nl,write('Parabéns por sobreviver o segundo ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 3 te aguarda!'),nl,termodinamica.
+ferias_aeroespacial(2):-nl,write('Parabéns por sobreviver o segundo ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 3 te aguarda!'),nl,termodinamica_aeroespacial.
 
 ferias_aeroespacial(3):-nl,write('Parabéns por sobreviver o terceiro ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 4 te aguarda!'),nl,mecflu.
 
@@ -95,31 +95,31 @@ ferias_aeroespacial(4):-nl,write('Parabéns por sobreviver o quarto ano, feliz n
 
 ferias_automotiva(2):-nl,write('Parabéns por sobreviver o segundo ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 3 te aguarda!'),nl.
 
-ferias_automotiva(3):-nl,write('Parabéns por sobreviver o terceiro ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 4 te aguarda!'),nl.
+ferias_automotiva(3):-nl,write('Parabéns por sobreviver o terceiro ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 4 te aguarda!'),nl,eletricidade_automotiva.
 
-ferias_automotiva(4):-nl,write('Parabéns por sobreviver o quarto ano, feliz natal e um ótimo ano novo, aproveite suas férias, o último ano, o Ano 5 te aguarda!'),nl.
+ferias_automotiva(4):-nl,write('Parabéns por sobreviver o quarto ano, feliz natal e um ótimo ano novo, aproveite suas férias, o último ano, o Ano 5 te aguarda!'),nl,proj_estr_veiculos.
 
 %Férias - Eletrônica
 
 ferias_eletronica(2):-nl,write('Parabéns por sobreviver o segundo ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 3 te aguarda!'),nl.
 
-ferias_eletronica(3):-nl,write('Parabéns por sobreviver o terceiro ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 4 te aguarda!'),nl.
+ferias_eletronica(3):-nl,write('Parabéns por sobreviver o terceiro ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 4 te aguarda!'),nl,termodinamica_eletronica.
 
-ferias_eletronica(4):-nl,write('Parabéns por sobreviver o quarto ano, feliz natal e um ótimo ano novo, aproveite suas férias, o último ano, o Ano 5 te aguarda!'),nl.
+ferias_eletronica(4):-nl,write('Parabéns por sobreviver o quarto ano, feliz natal e um ótimo ano novo, aproveite suas férias, o último ano, o Ano 5 te aguarda!'),nl,pricom.
 
 %Férias - Energia
 
-ferias_energia(2):-nl,write('Parabéns por sobreviver o segundo ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 3 te aguarda!'),nl.
+ferias_energia(2):-nl,write('Parabéns por sobreviver o segundo ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 3 te aguarda!'),nl,eletricidade_energia.
 
-ferias_energia(3):-nl,write('Parabéns por sobreviver o terceiro ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 4 te aguarda!'),nl.
+ferias_energia(3):-nl,write('Parabéns por sobreviver o terceiro ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 4 te aguarda!'),nl,termodinamica_energia.
 
-ferias_energia(4):-nl,write('Parabéns por sobreviver o quarto ano, feliz natal e um ótimo ano novo, aproveite suas férias, o último ano, o Ano 5 te aguarda!'),nl.
+ferias_energia(4):-nl,write('Parabéns por sobreviver o quarto ano, feliz natal e um ótimo ano novo, aproveite suas férias, o último ano, o Ano 5 te aguarda!'),nl,sist_hidro.
 
 %Férias - Software
 
-ferias_software(2):-nl,write('Parabéns por sobreviver o segundo ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 3 te aguarda!'),nl.
+ferias_software(2):-nl,write('Parabéns por sobreviver o segundo ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 3 te aguarda!'),nl.ted.
 
-ferias_software(3):-nl,write('Parabéns por sobreviver o terceiro ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 4 te aguarda!'),nl.
+ferias_software(3):-nl,write('Parabéns por sobreviver o terceiro ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 4 te aguarda!'),nl,redes.
 
 ferias_software(4):-nl,write('Parabéns por sobreviver o quarto ano, feliz natal e um ótimo ano novo, aproveite suas férias, o último ano, o Ano 5 te aguarda!'),nl.
 
@@ -137,7 +137,7 @@ curso:- write('Depois de enfrentar seu primeiro ano você terá a oportunidade d
         ; Escolha =:= 2 -> write('Você escolheu cursar Automotiva! Boa sorte e bom curso!'),nl,eletromag_automotiva
         ; Escolha =:= 3 -> write('Você escolheu cursar Eletrônica! Boa sorte e bom curso!'),nl,eletromag_eletronica
         ; Escolha =:= 4 -> write('Você escolheu cursar Energia! Boa sorte e bom curso!'),nl,eletromag_energia
-        ; Escolha =:= 5 -> write('Você escolheu cursar Software! Boa sorte e bom curso!'),nl).
+        ; Escolha =:= 5 -> write('Você escolheu cursar Software! Boa sorte e bom curso!'),nl,mds).
 
 %Ano2
 
@@ -177,10 +177,10 @@ eletromag_eletronica:-write('Parabéns, por causa da escolha do seu curso, você
            write('Se você errar, não terminará o trabalho e você e seu grupo irão reprovar'),nl,
            nl,write('Qual tomada você irá escolher'),nl,
            read(Tomada),
-           (Tomada =:= 1 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador 
-           ; Tomada =:= 3 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador
-           ; Tomada =:= 4 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador
-           ; Tomada =:= 6 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador
+           (Tomada =:= 1 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador,embarcados 
+           ; Tomada =:= 3 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador,embarcados
+           ; Tomada =:= 4 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador,embarcados
+           ; Tomada =:= 6 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador,embarcados
            ; write('Você escolheu uma tomada que não funcionava, você e seu grupo reprovaram!'),nl,mainIncrementa,eletromag_eletronica).
 
 eletromag_energia:-write('Parabéns, por causa da escolha do seu curso, você veio para Eletromagnetismo, ou como gostam de chamar, eletromag'),nl,
@@ -191,11 +191,44 @@ eletromag_energia:-write('Parabéns, por causa da escolha do seu curso, você ve
            write('Se você errar, não terminará o trabalho e você e seu grupo irão reprovar'),nl,
            nl,write('Qual tomada você irá escolher'),nl,
            read(Tomada),
-           (Tomada =:= 1 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador 
-           ; Tomada =:= 3 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador
-           ; Tomada =:= 4 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador
-           ; Tomada =:= 6 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador
+           (Tomada =:= 1 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador,circuitos
+           ; Tomada =:= 3 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador,circuitos
+           ; Tomada =:= 4 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador,circuitos
+           ; Tomada =:= 6 -> write('Parabéns você escolheu uma das tomadas certas! Aprovado!'),nl,zerar_contador,circuitos
            ; write('Você escolheu uma tomada que não funcionava, você e seu grupo reprovaram!'),nl,mainIncrementa,eletromag_energia).
+
+embarcados:-
+       nl,write('Você chegou na matéria de Embarcados!'),
+       nl,write('Pra passar é bem simples, você só precisa automatizar sua casa toda!'),
+       nl,write('Que bom que você mora sozinho em uma quitinete de 1 cômodo! Vai ser fácil!'),
+       nl,write('Escolha o que ligar e em qual ordem: a.televisão, b.forno elétrico e c.iluminação'),
+       nl,write('Resposta (exemplo = ac):'),
+       Resp1='cba',Resp2='cab',Resp3='cb',Resp4='ca',
+       nl,read(Ordem),
+       (Ordem = Resp1 -> write('Você ficou assistindo TV com o forno ligado e sua casa pegou fogo! Reprovado!'),nl,mainIncrementa,redes ;
+       Ordem = Resp2 -> write('Você ficou assistindo TV com o forno ligado e sua casa pegou fogo! Reprovado!'),nl,mainIncrementa,redes ;
+       Ordem = Resp3 -> write('Muito bem, você foi aprovado!'),nl,zerar_contador,ferias_eletronica(2) ;
+       Ordem = Resp4 -> write('Muito bem, você foi aprovado!'), nl,zerar_contador,ferias_eletronica(2) ;
+       write('Você precisa acender a luz primeiro! Reprovado!'),nl,mainIncrementa,embarcados).
+
+circuitos:-write('Bem vindo a circuitos, é muita matéria que exigirá muito de você'),nl,
+           write('Por conta disso decida, quantos exercícios você deverá fazer para passar na matéria?'),nl,
+           read(Resultado),nl,
+           (Resultado >= 100 -> write('Aprovado! O professor gostaria de passar mais mas infelizmente não tem tempo'),nl,zerar_contador,ferias_energia(2)
+           ; write('Reprovado! você foi muito inocente em sua resposta.'),nl,mainIncrementa,circuitos).
+
+mds:-write('Você chegou em MDS!'),nl,
+     write('Vai ser um semestre muito puxado e cansativo'),nl,
+     write('Mas pera! Isso virou AmongUS? Acho que tem um impostor entre nós...'),nl,
+     write('Você acaba de olhar o repositório, e enquanto você tem 120 commits, tem um casa com apenas 14..'),nl,
+     write('Descubra quem é!'),nl,
+     write('commits(andre,120)'),nl,
+     write('commits(pedro,180)'),nl,
+     write('commits(biel,143)'),nl,
+     write('commits(aara,230)'),nl,
+     write('commits(jorge,14)'),nl,
+     read(Commit),
+     (Commit == 'jorge' -> write('Aprovado!Maldito jorge!'),nl,zerar_contador,eda ; write('Reprovou! Será que o migué era você?')),nl,mainIncrementa,mds.
 
 sauto:-     write('Você esta cursando a materia de Sistemas Automotivos e precisa ajudar seu amigo a comprar um carro seminovo, 
                    ponha seus conhecimentos em pratica, inspecione os carros e escolha aquele que nao tem nenhum problema!!!'
@@ -256,7 +289,7 @@ escolha:- nl,write('Agora que viu todas as opcoes, escolha o carro!!'),nl,
           write('5 - Carro 5'),nl,
           write('6 - Carro 6'),nl,
           read(EscolhaFinal),nl,
-          (EscolhaFinal \== 5 -> write('Seu amigo comprou o carro com defeito, o professor ficou sabendo e voce foi reprovado!'),nl,mainIncrementa,sauto; write('Parabens!! Agora voce tem carona e a aprovacao naa disciplina!!')),nl,zerar_contador.
+          (EscolhaFinal \== 5 -> write('Seu amigo comprou o carro com defeito, o professor ficou sabendo e voce foi reprovado!'),nl,mainIncrementa,sauto; write('Parabens!! Agora voce tem carona e a aprovacao naa disciplina!!')),nl,zerar_contador,ferias_automotiva(2).
 
 sa:- nl,write('Você esta cursando a materia de Sistemas Aeroespaciais, fez um aviaozinho de papel para a materia e agora precisa jogar'),nl,
     write('Jogue o aviaozinho na oportunidade correta e evite que ele quebre!!!'),nl,
@@ -280,7 +313,7 @@ eda:-
        nl,write('[13,22,0,3,23,9,45,20]'),nl,
        Resposta = [0,3,9,13,20,22,23,45],
        read(Lista),
-       (Lista = Resposta -> write('Essa foi fácil... Aprovado!'),nl,zerar_contador ; write('Que pena, você reprovou!'),nl,mainIncrementa,eda).
+       (Lista = Resposta -> write('Essa foi fácil... Aprovado!'),nl,zerar_contador,ferias_software(2) ; write('Que pena, você reprovou!'),nl,mainIncrementa,eda).
 
 %Ano3
 
@@ -310,7 +343,7 @@ sinais:-
               T = [P,_,_,_,P,_,_,_,P];
        	T = [_,_,P,_,P,_,P,_,_].
        
-       inicia(T) :- win(T, x), write('Aprovado!'),zerar_contador.
+       inicia(T) :- win(T, x), write('Aprovado!'),zerar_contador,ferias_eletronica(3).
        inicia(T) :- win(T, o), write('Reprovado!'),mainIncrementa,sinais.
        inicia(T) :- 
               read(N),
@@ -364,7 +397,7 @@ sinais:-
               write('Empate'), nl,
               NewT = T.
 
-termodinamica:-
+termodinamica_aeroespacial:-
        nl,write('Agora é hora de enfrentar a disciplina de Termodinâmica'),
        nl,write('Mostre que aprendeu sobre a Lei de Conservação de Energia!'),
        nl,write('Tente não morrer congelado com o frio de junho na FGA e sobreviva até a hora da sua aula'),
@@ -374,11 +407,43 @@ termodinamica:-
        nl,write('4. Ir para CA'),
        nl,write('5. Ir para minha casa'),
        nl,read(Op),
-       (Op =:= 1 -> write('O RU é aberto! Você não conservou seu calor pois foi atingido por uma rajada de vento frio e poeira... Reprovado!'),nl,mainIncrementa,termodinamica ;
-       Op =:= 2 -> write('Você esqueceu que o Obelisco não é um local fechado... Seu calor não foi conservado e você congelou. Reprovado!'),nl,mainIncrementa,termodinamica ;
+       (Op =:= 1 -> write('O RU é aberto! Você não conservou seu calor pois foi atingido por uma rajada de vento frio e poeira... Reprovado!'),nl,mainIncrementa,termodinamica_aeroespacial ;
+       Op =:= 2 -> write('Você esqueceu que o Obelisco não é um local fechado... Seu calor não foi conservado e você congelou. Reprovado!'),nl,mainIncrementa,termodinamica_aeroespacial ;
        Op =:= 3 -> write('Parabéns! Com a biblioteca fechadinha e todos se escondendo lá, está bem quentinho! Aprovado!!!'),nl,zerar_contador ;
-       Op =:= 4 -> write('O CA é um lugar bem isolado, mas você esqueceu que ele está fechado e morreu de frio tentando abrir a porta. Que pena, reprovado!'),nl,mainIncrementa,termodinamica ; 
-       Op =:= 5 -> write('Você esqueceu que não podia mais faltar aulas e tomou SR... Triste, né? Reprovado!'),nl,mainIncrementa,termodinamica).
+       Op =:= 4 -> write('O CA é um lugar bem isolado, mas você esqueceu que ele está fechado e morreu de frio tentando abrir a porta. Que pena, reprovado!'),nl,mainIncrementa,termodinamica_aeroespacial ; 
+       Op =:= 5 -> write('Você esqueceu que não podia mais faltar aulas e tomou SR... Triste, né? Reprovado!'),nl,mainIncrementa,termodinamica_aeroespacial).
+
+termodinamica_eletronica:-
+       nl,write('Agora é hora de enfrentar a disciplina de Termodinâmica'),
+       nl,write('Mostre que aprendeu sobre a Lei de Conservação de Energia!'),
+       nl,write('Tente não morrer congelado com o frio de junho na FGA e sobreviva até a hora da sua aula'),
+       nl,write('1. Ir para RU'),
+       nl,write('2. Ir para Obelisco'),
+       nl,write('3. Ir para Biblioteca'),
+       nl,write('4. Ir para CA'),
+       nl,write('5. Ir para minha casa'),
+       nl,read(Op),
+       (Op =:= 1 -> write('O RU é aberto! Você não conservou seu calor pois foi atingido por uma rajada de vento frio e poeira... Reprovado!'),nl,mainIncrementa,termodinamica_eletronica ;
+       Op =:= 2 -> write('Você esqueceu que o Obelisco não é um local fechado... Seu calor não foi conservado e você congelou. Reprovado!'),nl,mainIncrementa,termodinamica_eletronica ;
+       Op =:= 3 -> write('Parabéns! Com a biblioteca fechadinha e todos se escondendo lá, está bem quentinho! Aprovado!!!'),nl,zerar_contador ;
+       Op =:= 4 -> write('O CA é um lugar bem isolado, mas você esqueceu que ele está fechado e morreu de frio tentando abrir a porta. Que pena, reprovado!'),nl,mainIncrementa,termodinamica_eletronica ; 
+       Op =:= 5 -> write('Você esqueceu que não podia mais faltar aulas e tomou SR... Triste, né? Reprovado!'),nl,mainIncrementa,termodinamica_eletronica).
+
+termodinamica_energia:-
+       nl,write('Agora é hora de enfrentar a disciplina de Termodinâmica'),
+       nl,write('Mostre que aprendeu sobre a Lei de Conservação de Energia!'),
+       nl,write('Tente não morrer congelado com o frio de junho na FGA e sobreviva até a hora da sua aula'),
+       nl,write('1. Ir para RU'),
+       nl,write('2. Ir para Obelisco'),
+       nl,write('3. Ir para Biblioteca'),
+       nl,write('4. Ir para CA'),
+       nl,write('5. Ir para minha casa'),
+       nl,read(Op),
+       (Op =:= 1 -> write('O RU é aberto! Você não conservou seu calor pois foi atingido por uma rajada de vento frio e poeira... Reprovado!'),nl,mainIncrementa,termodinamica_energia ;
+       Op =:= 2 -> write('Você esqueceu que o Obelisco não é um local fechado... Seu calor não foi conservado e você congelou. Reprovado!'),nl,mainIncrementa,termodinamica_energia ;
+       Op =:= 3 -> write('Parabéns! Com a biblioteca fechadinha e todos se escondendo lá, está bem quentinho! Aprovado!!!'),nl,zerar_contador,economia_energia ;
+       Op =:= 4 -> write('O CA é um lugar bem isolado, mas você esqueceu que ele está fechado e morreu de frio tentando abrir a porta. Que pena, reprovado!'),nl,mainIncrementa,termodinamica_energia ; 
+       Op =:= 5 -> write('Você esqueceu que não podia mais faltar aulas e tomou SR... Triste, né? Reprovado!'),nl,mainIncrementa,termodinamica_energia).
 
 fisica_moderna :- write('Você chegou a física moderna, dentre as físicas é a mais atual, e por isso a mais complexa'),nl,
                   write('Para passar basta responder a pergunta, o gato de Schrödinger está: '),nl,
@@ -388,8 +453,8 @@ fisica_moderna :- write('Você chegou a física moderna, dentre as físicas é a
                   read(Resposta),
                   random(0, 100, Resultado_vivo),write(Resultado_vivo),nl,
                   random(0, 100, Resultado_morto),write(Resultado_morto),nl,
-                  (Resposta =:= 1, Resultado_vivo >= Resultado_morto -> write('Certo o gato tem mais chance de estar vivo!'),nl,write('Aprovado!'),zerar_contador 
-                  ; Resposta =:= 2, Resultado_morto >= Resultado_vivo -> write('Certo o gato tem mais chance de estar morto!'),nl,write('Aprovado!'),zerar_contador
+                  (Resposta =:= 1, Resultado_vivo >= Resultado_morto -> write('Certo o gato tem mais chance de estar vivo!'),nl,write('Aprovado!'),zerar_contador,ferias_energia(3) 
+                  ; Resposta =:= 2, Resultado_morto >= Resultado_vivo -> write('Certo o gato tem mais chance de estar morto!'),nl,write('Aprovado!'),zerar_contador,ferias_energia(3)
                   ; write('Reprovado! Terá que fazer a matéria novamente!'),nl,mainIncrementa, fisica_moderna).
 
 
@@ -397,7 +462,7 @@ fso:- write('Você chegou em FSO - Fundamentos de Sistemas Operacionais'),nl,
       write('Para você passar é simples digite o nome do melhor sistema operacional'),nl,
       write('Não se esqueça de usar as aspas simples para escrever'),nl,
       write('Sua resposta: '),read(Resposta),nl,
-      (Resposta = 'Linux' -> write('Aprovado!'),nl,zerar_contador ; write('Reprovado!'),nl,mainIncrementa,fso).
+      (Resposta = 'Linux' -> write('Aprovado!'),nl,zerar_contador,ferias_software(3) ; write('Reprovado!'),nl,mainIncrementa,fso).
 
 design:- nl,write('Você esta cursando a materia de Design de veiculos e precisa responder uma pergunta pra passar!'),nl,
          write('O que um time de futebol e um carro tem em comum?'),nl,
@@ -449,7 +514,7 @@ economia_energia:- write('Bem-vindo(a) a matéria de Economia de Energia, para p
                    write('1- Netflix'),nl,
                    write('2- Google Chrome'),nl,
                    read(Aplicativo5),(Aplicativo5 =:= 1 -> write('Bateria: '),subtractor_bateria(Celular4, Celular5),write('%'),nl ; write('Bateria: '),counter_bateria(Celular4, Celular5),write('%')),nl,
-                   (Celular5 =< 0 -> write('Reprovado! Terá que fazer a matéria novamente!'),nl,mainIncrementa,economia_energia ; write('Aprovado!'),zerar_contador).
+                   (Celular5 =< 0 -> write('Reprovado! Terá que fazer a matéria novamente!'),nl,mainIncrementa,economia_energia ; write('Aprovado!'),zerar_contador,ferias_energia(4)).
 
 
 bd:- nl,write('Você esta cursando a materia de Bancos de dados e percebeu que salvou o nome de um usuario sem a senha!!'),nl,
@@ -459,7 +524,7 @@ senha:-     write('Senha criptografada = cbodp'),nl,
             write('Se precisar de dicas sobre a cifra, escreva '),write(' cola '),write(' ou '),write(' dica '),write(' na resposta'),nl,
             read(Senha),nl,
             (Senha \== 'banco', Senha \== 'cola', Senha \== 'dica' -> write('Senha errada, faca a materia de novo..'),nl,mainIncrementa,bd
-            ; Senha == 'banco' -> write('Aprovado!'),nl,zerar_contador
+            ; Senha == 'banco' -> write('Aprovado!'),nl,zerar_contador,ferias_software(4)
             ; Senha == 'cola' -> write('O professor pegou voce colando... Reprovado!!!'),nl,mainIncrementa,bd
             ; Senha == 'dica' -> write('Dica final: a+1, b+1, c+1,...'),nl,senha
             ).
@@ -510,6 +575,25 @@ eletricidade_automotiva:-write('Bem-vindo(a) a eletricidade!'),nl,
               write('Escolha 4: '),read(Escolha4),nl,
               (Escolha4 \== 4 -> write('Reprovado'),nl,mainIncrementa,eletricidade_automotiva ; write('Escolha 4 correta!')),nl,
               write('Parabéns você foi aprovado!'),nl,zerar_contador.
+
+eletricidade_energia:-write('Bem-vindo(a) a eletricidade!'),nl,
+              write('Nessa matéria você terá que ligar todos as luzes da sala, em apenas 4 movimentos, você sabe que:'),nl,
+              write('As luzes da sala estão desligadas'),nl,
+              write('A sala possui 4 interruptores correspondendo as 5 luzes na sala, cada uma atua de uma maneira diferente;'),nl,
+              write('interruptor 1 - liga a luz 1'),nl,
+              write('interruptor 2 - liga as luzes 1, 2 e 5'),nl,
+              write('interruptor 3 - liga as luzes 3 e 4, e desliga a luz 4 caso ela esteja ligada'),nl,
+              write('interruptor 4 - liga a luz 4'),nl,
+              write('Suas respostas: '),nl,
+              nl,write('Escolha 1: '),read(Escolha1),nl,
+              (Escolha1 \== 4 -> write('Reprovado'),nl,mainIncrementa,eletricidade_energia ; write('Escolha 1 correta!')),nl,
+              write('Escolha 2: '),read(Escolha2),nl,
+              (Escolha2 \== 2 -> write('Reprovado'),nl,mainIncrementa,eletricidade_energia ; write('Escolha 2 correta!')),nl,
+              write('Escolha 3: '),read(Escolha3),nl,
+              (Escolha3 \== 3 -> write('Reprovado'),nl,mainIncrementa,eletricidade_energia ; write('Escolha 3 correta!')),nl,
+              write('Escolha 4: '),read(Escolha4),nl,
+              (Escolha4 \== 4 -> write('Reprovado'),nl,mainIncrementa,eletricidade_energia ; write('Escolha 4 correta!')),nl,
+              write('Parabéns você foi aprovado!'),nl,zerar_contador,fisica_moderna.
               
 redes:-
        nl,write('Seu desafio agora é a matéria de Redes!'),
@@ -537,7 +621,7 @@ redes:-
               nl,write('4. Pedro já estaria aprovado, se as notas da Prova 2 não tivessem sido alteradas'),
               nl,write('Escreva o nome do hacker:'),
               nl,read(Pessoa),
-              (Pessoa = 'sara' -> write('Parabéns! O hacker foi jubilado e você conseguiu passar na matéria!'),nl,zerar_contador ;
+              (Pessoa = 'sara' -> write('Parabéns! O hacker foi jubilado e você conseguiu passar na matéria!'),nl,zerar_contador,bd ;
               write('Você falhou em encontrar o hacker e o professor reprovou TODOS!!!'),nl,mainIncrementa,redes).
 
 %Ano5
@@ -559,21 +643,6 @@ sist_hidro:-write('Você chegou a Sistemas Hidroelétricos'),nl,
             (Bebedouro =:= 3 -> write('Parabéns você escolheu o bebedouro com gosto de ferro, mas que não te dá um banho. Aprovado!'),nl,zerar_contador,tcc_energia
             ; Bebedouro =:= 6 -> write('Parabéns você escolheu o bebedouro que não sai quase nada de água, mas que não te dá um banho. Aprovado!'),nl,zerar_contador,tcc_energia
             ; write('Infelizmente o bebedouro de encharcou e você foi reprovado!'),nl,mainIncrementa,sist_hidro).
-
-
-embarcados:-
-       nl,write('Você chegou na matéria de Embarcados!'),
-       nl,write('Pra passar é bem simples, você só precisa automatizar sua casa toda!'),
-       nl,write('Que bom que você mora sozinho em uma quitinete de 1 cômodo! Vai ser fácil!'),
-       nl,write('Escolha o que ligar e em qual ordem: a.televisão, b.forno elétrico e c.iluminação'),
-       nl,write('Resposta (exemplo = ac):'),
-       Resp1='cba',Resp2='cab',Resp3='cb',Resp4='ca',
-       nl,read(Ordem),
-       (Ordem = Resp1 -> write('Você ficou assistindo TV com o forno ligado e sua casa pegou fogo! Reprovado!'),nl,mainIncrementa,redes ;
-       Ordem = Resp2 -> write('Você ficou assistindo TV com o forno ligado e sua casa pegou fogo! Reprovado!'),nl,mainIncrementa,redes ;
-       Ordem = Resp3 -> write('Muito bem, você foi aprovado!'),nl,zerar_contador ;
-       Ordem = Resp4 -> write('Muito bem, você foi aprovado!'), nl,zerar_contador ;
-       write('Você precisa acender a luz primeiro! Reprovado!'),nl,mainIncrementa,embarcados).
        
 pricom:-
        nl,write('Muito é falado sobre como essa matéria é difícil, mas agora é sua vez de descobrir se isso é verdade!'),
@@ -584,7 +653,7 @@ pricom:-
        nl,write('3. Estudar de maneira saudável, com pausas para relaxar'),
        nl,read(Esc),
        random(0,1,Sorte),
-       (Esc =:= 1,Sorte =:= 1 -> write('Nossa, você teve muita sorte! O professor não te pegou colando e você foi aprovado!'),nl,zerar_contador ; 
+       (Esc =:= 1,Sorte =:= 1 -> write('Nossa, você teve muita sorte! O professor não te pegou colando e você foi aprovado!'),nl,zerar_contador,tcc_eletronica ; 
        Esc =:= 1,Sorte =:= 0 -> write('O professor te pegou colando e resolveu que você merecia um SR. Reprovado! :o'),nl,mainIncrementa,pricom  ;
        Esc =:= 2 -> write('Você estudou demais, esqueceu de dormir e se alimentar direito e acabou sendo internado! O professor não aceitou o atestado e você reprovou!'),nl,mainIncrementa,pricom ;
        Esc =:= 3 -> write('Parabéns pelo seu esforço e equilíbrio, você conseguiu! Aprovado!!'),nl,zerar_contador).
@@ -615,7 +684,7 @@ proj_estr_veiculos:-
        nl,write('2. Argumentar que você carregou ele naquela outra matéria'),
        nl,write('3. Tentar baixar sozinho'),
        nl,read(N),
-       (N =:= 1 -> write('Você conseguiu convencê-lo a tirar um tempinho e instalar pra você. Parabéns, aprovado!'),nl,zerar_contador ;
+       (N =:= 1 -> write('Você conseguiu convencê-lo a tirar um tempinho e instalar pra você. Parabéns, aprovado!'),nl,zerar_contador,tcc_automotiva ;
        N =:= 2 -> write('Seu amigo achou que você foi rude em jogar isso na cara dele e não instalou nada pra você... Reprovado! (e sozinho)'),nl,mainIncrementa,proj_estr_veiculos; 
        N =:= 3 -> write('Clique no link certo para conseguir fazer a instalação'),nl,link).
 
@@ -633,10 +702,10 @@ tcc_aeroespacial:-nl,write('Você está prestes a se formar, porém deve enfrent
      write('4- Orientador4'),nl,
      random(0, 50, Orientador4),
      read(Escolha),
-     (Escolha =:= 1, Orientador1 > Orientador2, Orientador1 > Orientador3, Orientador1 > Orientador4 -> write('Aprovado!'),zerar_contador,nl 
-     ; Escolha =:= 2, Orientador2 > Orientador1, Orientador2 > Orientador3, Orientador2 > Orientador4 -> write('Aprovado!'),zerar_contador,nl
-     ; Escolha =:= 3, Orientador3 > Orientador1, Orientador3 > Orientador2, Orientador3 > Orientador4 -> write('Aprovado!'),zerar_contador,nl
-     ; Escolha =:= 4, Orientador4 > Orientador1, Orientador4 > Orientador2, Orientador4 > Orientador3 -> write('Aprovado!'),zerar_contador,nl
+     (Escolha =:= 1, Orientador1 > Orientador2, Orientador1 > Orientador3, Orientador1 > Orientador4 -> write('Aprovado!'),zerar_contador,nl,formou_aeroespacial 
+     ; Escolha =:= 2, Orientador2 > Orientador1, Orientador2 > Orientador3, Orientador2 > Orientador4 -> write('Aprovado!'),zerar_contador,nl,formou_aeroespacial
+     ; Escolha =:= 3, Orientador3 > Orientador1, Orientador3 > Orientador2, Orientador3 > Orientador4 -> write('Aprovado!'),zerar_contador,nl,formou_aeroespacial
+     ; Escolha =:= 4, Orientador4 > Orientador1, Orientador4 > Orientador2, Orientador4 > Orientador3 -> write('Aprovado!'),zerar_contador,nl,formou_aeroespacial
      ; write('Você escolheu um orientador sem tempo algum, ele não pode te ajudar e você acabou reprovando'),nl,mainIncrementa,tcc_aeroespacial).
 
 tcc_automotiva:-nl,write('Você está prestes a se formar, porém deve enfrentar seu último desafio: O TCC'),nl,
@@ -652,10 +721,10 @@ tcc_automotiva:-nl,write('Você está prestes a se formar, porém deve enfrentar
      write('4- Orientador4'),nl,
      random(0, 50, Orientador4),
      read(Escolha),
-     (Escolha =:= 1, Orientador1 > Orientador2, Orientador1 > Orientador3, Orientador1 > Orientador4 -> write('Aprovado!'),zerar_contador,nl 
-     ; Escolha =:= 2, Orientador2 > Orientador1, Orientador2 > Orientador3, Orientador2 > Orientador4 -> write('Aprovado!'),zerar_contador,nl
-     ; Escolha =:= 3, Orientador3 > Orientador1, Orientador3 > Orientador2, Orientador3 > Orientador4 -> write('Aprovado!'),zerar_contador,nl
-     ; Escolha =:= 4, Orientador4 > Orientador1, Orientador4 > Orientador2, Orientador4 > Orientador3 -> write('Aprovado!'),zerar_contador,nl
+     (Escolha =:= 1, Orientador1 > Orientador2, Orientador1 > Orientador3, Orientador1 > Orientador4 -> write('Aprovado!'),zerar_contador,nl,formou_automotiva 
+     ; Escolha =:= 2, Orientador2 > Orientador1, Orientador2 > Orientador3, Orientador2 > Orientador4 -> write('Aprovado!'),zerar_contador,nl,formou_automotiva
+     ; Escolha =:= 3, Orientador3 > Orientador1, Orientador3 > Orientador2, Orientador3 > Orientador4 -> write('Aprovado!'),zerar_contador,nl,formou_automotiva
+     ; Escolha =:= 4, Orientador4 > Orientador1, Orientador4 > Orientador2, Orientador4 > Orientador3 -> write('Aprovado!'),zerar_contador,nl,formou_automotiva
      ; write('Você escolheu um orientador sem tempo algum, ele não pode te ajudar e você acabou reprovando'),nl,mainIncrementa,tcc_automotiva).
 
 tcc_eletronica:-nl,write('Você está prestes a se formar, porém deve enfrentar seu último desafio: O TCC'),nl,
@@ -671,10 +740,10 @@ tcc_eletronica:-nl,write('Você está prestes a se formar, porém deve enfrentar
      write('4- Orientador4'),nl,
      random(0, 50, Orientador4),
      read(Escolha),
-     (Escolha =:= 1, Orientador1 > Orientador2, Orientador1 > Orientador3, Orientador1 > Orientador4 -> write('Aprovado!'),zerar_contador,nl 
-     ; Escolha =:= 2, Orientador2 > Orientador1, Orientador2 > Orientador3, Orientador2 > Orientador4 -> write('Aprovado!'),zerar_contador,nl
-     ; Escolha =:= 3, Orientador3 > Orientador1, Orientador3 > Orientador2, Orientador3 > Orientador4 -> write('Aprovado!'),zerar_contador,nl
-     ; Escolha =:= 4, Orientador4 > Orientador1, Orientador4 > Orientador2, Orientador4 > Orientador3 -> write('Aprovado!'),zerar_contador,nl
+     (Escolha =:= 1, Orientador1 > Orientador2, Orientador1 > Orientador3, Orientador1 > Orientador4 -> write('Aprovado!'),zerar_contador,nl,formou_eletronica 
+     ; Escolha =:= 2, Orientador2 > Orientador1, Orientador2 > Orientador3, Orientador2 > Orientador4 -> write('Aprovado!'),zerar_contador,nl,formou_eletronica
+     ; Escolha =:= 3, Orientador3 > Orientador1, Orientador3 > Orientador2, Orientador3 > Orientador4 -> write('Aprovado!'),zerar_contador,nl,formou_eletronica
+     ; Escolha =:= 4, Orientador4 > Orientador1, Orientador4 > Orientador2, Orientador4 > Orientador3 -> write('Aprovado!'),zerar_contador,nl,formou_eletronica
      ; write('Você escolheu um orientador sem tempo algum, ele não pode te ajudar e você acabou reprovando'),nl,mainIncrementa,tcc_eletronica).
 
 tcc_energia:-nl,write('Você está prestes a se formar, porém deve enfrentar seu último desafio: O TCC'),nl,
@@ -690,10 +759,10 @@ tcc_energia:-nl,write('Você está prestes a se formar, porém deve enfrentar se
      write('4- Orientador4'),nl,
      random(0, 50, Orientador4),
      read(Escolha),
-     (Escolha =:= 1, Orientador1 > Orientador2, Orientador1 > Orientador3, Orientador1 > Orientador4 -> write('Aprovado!'),zerar_contador,nl 
-     ; Escolha =:= 2, Orientador2 > Orientador1, Orientador2 > Orientador3, Orientador2 > Orientador4 -> write('Aprovado!'),zerar_contador,nl
-     ; Escolha =:= 3, Orientador3 > Orientador1, Orientador3 > Orientador2, Orientador3 > Orientador4 -> write('Aprovado!'),zerar_contador,nl
-     ; Escolha =:= 4, Orientador4 > Orientador1, Orientador4 > Orientador2, Orientador4 > Orientador3 -> write('Aprovado!'),zerar_contador,nl
+     (Escolha =:= 1, Orientador1 > Orientador2, Orientador1 > Orientador3, Orientador1 > Orientador4 -> write('Aprovado!'),zerar_contador,nl,formou_energia 
+     ; Escolha =:= 2, Orientador2 > Orientador1, Orientador2 > Orientador3, Orientador2 > Orientador4 -> write('Aprovado!'),zerar_contador,nl,formou_energia
+     ; Escolha =:= 3, Orientador3 > Orientador1, Orientador3 > Orientador2, Orientador3 > Orientador4 -> write('Aprovado!'),zerar_contador,nl,formou_energia
+     ; Escolha =:= 4, Orientador4 > Orientador1, Orientador4 > Orientador2, Orientador4 > Orientador3 -> write('Aprovado!'),zerar_contador,nl,formou_energia
      ; write('Você escolheu um orientador sem tempo algum, ele não pode te ajudar e você acabou reprovando'),nl,mainIncrementa,tcc_energia).
 
 tcc_software:-nl,write('Você está prestes a se formar, porém deve enfrentar seu último desafio: O TCC'),nl,
@@ -709,8 +778,8 @@ tcc_software:-nl,write('Você está prestes a se formar, porém deve enfrentar s
      write('4- Orientador4'),nl,
      random(0, 50, Orientador4),
      read(Escolha),
-     (Escolha =:= 1, Orientador1 > Orientador2, Orientador1 > Orientador3, Orientador1 > Orientador4 -> write('Aprovado!'),zerar_contador,nl 
-     ; Escolha =:= 2, Orientador2 > Orientador1, Orientador2 > Orientador3, Orientador2 > Orientador4 -> write('Aprovado!'),zerar_contador,nl
-     ; Escolha =:= 3, Orientador3 > Orientador1, Orientador3 > Orientador2, Orientador3 > Orientador4 -> write('Aprovado!'),zerar_contador,nl
-     ; Escolha =:= 4, Orientador4 > Orientador1, Orientador4 > Orientador2, Orientador4 > Orientador3 -> write('Aprovado!'),zerar_contador,nl
+     (Escolha =:= 1, Orientador1 > Orientador2, Orientador1 > Orientador3, Orientador1 > Orientador4 -> write('Aprovado!'),zerar_contador,nl,formou_software 
+     ; Escolha =:= 2, Orientador2 > Orientador1, Orientador2 > Orientador3, Orientador2 > Orientador4 -> write('Aprovado!'),zerar_contador,nl,formou_software
+     ; Escolha =:= 3, Orientador3 > Orientador1, Orientador3 > Orientador2, Orientador3 > Orientador4 -> write('Aprovado!'),zerar_contador,nl,formou_software
+     ; Escolha =:= 4, Orientador4 > Orientador1, Orientador4 > Orientador2, Orientador4 > Orientador3 -> write('Aprovado!'),zerar_contador,nl,formou_software
      ; write('Você escolheu um orientador sem tempo algum, ele não pode te ajudar e você acabou reprovando'),nl,mainIncrementa,tcc_software).
