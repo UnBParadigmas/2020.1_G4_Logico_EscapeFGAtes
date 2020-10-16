@@ -1,3 +1,61 @@
+:- use_module(library(clpfd)).
+:- use_module(library(random)).
+:- dynamic contador/1.
+
+contador(0).
+
+incrementaContador :- contador(X), Y is X, retract(contador(X)), Z is (Y+1), assert(contador(Z)), (X = 3 -> jubilar ; write('Você reprovou '),write(X),write(' vezes')),nl.
+
+mainIncrementa :- incrementaContador.
+
+decrementaContador :- contador(X), Y is X, retract(contador(X)), Z is (Y-1), assert(contador(Z)).
+
+%Comandos
+
+iniciar:-write('Parabéns por passar no vestibular e ingressar nessa nova fase da vida, a FACULDADE, será que você tem o que é preciso para sobreviver.'),nl,
+         write('Tente não jubilar e consiga se formar em 5 anos. Bem vindo ao curso de Engenharia.Bem vindo ao FGAtes.'),nl,comandos.
+
+comandos:-nl,write('Antes de começar você deve entender algumas instruções sobre seu curso:'),nl,
+          write('comandos.                   --Acesse as instruções a qualquer momento'),nl,
+          write('jogar.                      --Inicia seu ciclo de 5 anos na faculdade'),nl,
+          write('trancar.                    --Para caso queira desisitir e sair do jogo'),nl.
+
+trancar:-write('É uma pena que não tenha conseguido se formar. Mais sorte da próxima vez, até logo'),nl,
+         write('ESCAPE FGATES: Você não se formou!'),!.
+
+jogar:-nl,write('Bem-vindo, parabéns por passar o vestibular, vocễ agora deve enfrentar os 5 anos de faculdade, será que você irá sobreviver '),nl,
+       write('Como calouro você não escolhe, por isso deverá enfrentar seus primeiros 2 semestres passando nas matérias que lhe foram dadas. Boa sorte!'),nl,calculo.
+
+jubilar:-write('Você reprovou mais de 3 vezes, você foi Jubilado!'),!.
+
+%Ano1
+
+calculo:-nl,write('Seu primeiro desafio, Cálculo, a matéria que é falada por todos os estudantes de engenharia'),nl,
+         write('essa matéria pode ser fácil como somar 1 com 2, como também pode ser impossível de se passar, veremos como você irá se sair nessa.'),nl,
+         nl,write('Resolva:'),nl,
+         write('1 + 2 = ?'),nl,
+         write('Resposta: '),
+         read(Resposta),
+         (Resposta=:=3 -> write('Parabéns por passar em seu primeiro semestre, veremos até quando irá durar.'),nl,intro_engenharia ; write('É uma pena, mas você reprovou a matéria, por causa disso terá que fazê-la novamente'),nl,mainIncrementa,calculo).
+
+intro_engenharia:-nl,write('Você está fazendo Introdução a Engenharia, seu professor te propôs um trabalho simples para que possa ser aprovado'),nl,
+                  write('Ele pediu para que você organizasse a tabela de assentos do seu grupo'),nl,
+                  write('A tabela serve para saber qual posição cada membro irá ocupar, sabendo que cada mês os membros devem mudar de lugar'),nl,
+                  write('Por você estar no primeiro semestre o professor facilitou e pediu para você apenas terminar a tabela já feita.'),nl,
+                  write('A forma de organizar te lembra um sudoku de 4x4'),nl,
+                  write('Sabendo que no seu grupo tem o Andre, a Sara, o Gabriel e o Pedro'),nl,
+                  write('E que cada um corresponde respectivamente aos numeros 1, 2, 3 e 4, e que você como lider não participa dessa organização'),nl,
+                  write('Organize a tabela em forma de lista: '),nl,
+                  write('Tabela:'),nl,
+                  write('4 1 ? ?'),nl,
+                  write('2 3 4 1'),nl,
+                  write('1 2 3 4'),nl,
+                  write('? ? 1 2'),nl,
+                  write('Lembrando que a resposta deve conter todos os valores, e não apenas os números que faltam'),nl,
+                  Resposta = [4,1,2,3,2,3,4,1,1,2,3,4,3,4,1,2],
+                  read(Lista),
+                  (Lista = Resposta -> write('Parabéns a lista está correta! você foi aprovado!'),ferias(1) ; write('É uma pena, mas você reprovou a matéria, por causa disso terá que fazê-la novamente'),nl,mainIncrementa,intro_engenharia).
+
 eda:-
        nl,write('Agora você está em Estruturas de Dados!'),
        nl,write('Prove que está prestando atenção nas aulas e ordene a lista a seguir:'),
