@@ -121,7 +121,7 @@ ferias_software(2):-nl,write('Parabéns por sobreviver o segundo ano, feliz nata
 
 ferias_software(3):-nl,write('Parabéns por sobreviver o terceiro ano, feliz natal e um ótimo ano novo, aproveite suas férias, o Ano 4 te aguarda!'),nl,redes.
 
-ferias_software(4):-nl,write('Parabéns por sobreviver o quarto ano, feliz natal e um ótimo ano novo, aproveite suas férias, o último ano, o Ano 5 te aguarda!'),nl.
+ferias_software(4):-nl,write('Parabéns por sobreviver o quarto ano, feliz natal e um ótimo ano novo, aproveite suas férias, o último ano, o Ano 5 te aguarda!'),nl,desenho.
 
 %Escolha de curso
 
@@ -631,6 +631,23 @@ redes:-
               write('Você falhou em encontrar o hacker e o professor reprovou TODOS!!!'),nl,mainIncrementa,redes).
 
 %Ano5
+
+desenho:-write('Caramba! você chegou na matéria mais díficil do curso de software! Arquitetura e Desenho de Software!!!'),nl,
+         write('Mas é muito comum as pessoas saírem dessa matéria amando nossa queria professora Milene!'),nl,
+         write('Quer saber qual ser mistico a Milene vira segunda e sexta, de 10h as 12h?'),nl,
+         nl,write('então, digite qual criatura mistica representa melhor a Milene.'),nl,
+         write('fada'),nl,
+         write('unicórnio'),nl,
+         write('perfeiçãoEmPessoa'),nl,
+         write('mauMauSlayer'),nl,
+         write('bella'),nl,
+         write('profDeDesenho'),nl,
+         write('tinkerBell'),nl,
+         write('donaDoMundo'),nl,
+         write('pessoa'),nl,
+         write('diretora'),nl,
+         write('Sua resposta: '),read(Resposta),nl,
+         (Resposta = 'profDeDesenho' -> write('Ela é muitas coisas, mas Prof de desenho é uma das melhores! Aprovado!'),nl,zerar_contador,tcc_software ; write('Reprovado!'),nl,mainIncrementa,desenho).
 
 sist_hidro:-write('Você chegou a Sistemas Hidroelétricos'),nl,
             write('Por conta do conteúdo ensinando você deverá ir ao laboratório, poreḿ antes de ir você esta com sede'),nl,
